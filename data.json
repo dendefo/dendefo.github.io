@@ -2,16 +2,21 @@
   {
     "Title": "Idle Zoo World",
     "Description": "Idle Resource Management Game, where players can build and manage their own zoo.\nAttracting visitors and earning money to expand their collection of animals and facilities.",
-    "VideoLink": "https://www.youtube.com/embed/optpSuFshZA"
+    "VideoLink": "https://www.youtube.com/embed/optpSuFshZA",
+    "IOSLink": "https://apps.apple.com/us/app/idle-zoo-world/id6741068719",
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.QuarterGames.IdleZooWorld"
   },
   {
     "Title": "Hidden Match World",
     "Description": "Hidden Object Puzzle Game, where players search for hidden objects in levels. Main Match mechanic is taken from Zen Match.",
-    "VideoLink": "https://www.youtube.com/embed/ZctSFubpwfs"
+    "VideoLink": "https://www.youtube.com/embed/ZctSFubpwfs",
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.HiddenMatchWorld"  
   },
   {
     "Title": "Spaceship Defense TD",
     "Description": "Tower Defense Game, where player chooses towers and upgrades for his ship and defends against waves of enemies.",
-    "VideoLink": "https://www.youtube.com/embed/Yip4yHiBFKM"
+    "VideoLink": "https://www.youtube.com/embed/Yip4yHiBFKM",
+    "IOSLink": "https://apps.apple.com/us/app/spaceship-defense-td/id6752291600",
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.SpaceshipDefenseTD"
   }
 ]

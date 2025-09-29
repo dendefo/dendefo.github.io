@@ -66,3 +66,62 @@ max-width: 500px;
 height: 300px;
 border: none;
 }
+
+/* Responsive design for sections */
+@media (max-width: 768px) {
+.section {
+    flex-direction: column;
+    text-align: center;
+}
+
+.section .text {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section .video iframe {
+    max-width: 100%;
+    height: 250px;
+}
+}
+
+/* Platform Links Styling */
+.platform-links {
+display: flex;
+gap: 1rem;
+margin-top: 1.5rem;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.platform-badge {
+display: inline-block;
+text-decoration: none;
+transition: transform 0.2s, opacity 0.2s;
+}
+
+.platform-badge:hover {
+transform: scale(1.05);
+opacity: 0.9;
+}
+
+.store-badge {
+height: 50px;
+width: auto;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for platform links */
+@media (max-width: 768px) {
+.platform-links {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.platform-link {
+    width: fit-content;
+    min-width: 200px;
+}
+}
