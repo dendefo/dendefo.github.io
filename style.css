@@ -1,0 +1,68 @@
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f8f9fa;
+color: #333;
+line-height: 1.6;
+}
+
+
+header, footer {
+text-align: center;
+padding: 1.5rem;
+background: #222;
+color: #fff;
+}
+
+
+#portfolio-container {
+display: flex;
+flex-direction: column;
+}
+
+
+.section {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 3rem 1.5rem;
+border-bottom: 4px solid #999;
+background: #fff;
+}
+
+
+.section .text {
+  flex: 1;                 /* let it grow/shrink as needed */
+  max-width: 600px;        /* maximum width of text block */
+  text-align: left;
+  padding-right: 2rem;
+  padding-left: 2rem;      /* space from the left border */
+  box-sizing: border-box;  /* ensures padding is included in max-width */
+}
+
+
+.section .text h2 {
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+
+
+.section .text p {
+max-width: 500px;
+margin-bottom: 1.5rem;
+}
+
+
+.section .video {
+flex: 1;
+display: flex;
+justify-content: center;
+}
+
+
+.section .video iframe {
+width: 100%;
+max-width: 500px;
+height: 300px;
+border: none;
+}
