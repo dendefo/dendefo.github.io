@@ -7,13 +7,96 @@ line-height: 1.6;
 }
 
 
-header, footer {
-text-align: center;
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
 padding: 1.5rem;
 background: #222;
 color: #fff;
 }
 
+footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1.5rem;
+background: #222;
+color: #fff;
+}
+
+/* CV Link Styling */
+.cv-link {
+color: #fff;
+text-decoration: none;
+background: #007acc;
+padding: 0.75rem 1.5rem;
+border-radius: 8px;
+transition: background-color 0.3s, transform 0.2s;
+font-weight: 500;
+border: 2px solid #007acc;
+}
+
+.cv-link:hover {
+background: #005a99;
+border-color: #005a99;
+transform: translateY(-2px);
+}
+
+.cv-link span {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+/* Social Links Styling */
+.social-links {
+display: flex;
+gap: 1rem;
+align-items: center;
+}
+
+.social-link {
+color: #fff;
+text-decoration: none;
+padding: 0.5rem 1rem;
+border-radius: 6px;
+transition: background-color 0.3s, transform 0.2s;
+font-weight: 500;
+border: 2px solid;
+}
+
+.social-link:hover {
+transform: translateY(-1px);
+}
+
+.social-link span {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+/* GitHub Link */
+.github-link {
+background: #333;
+border-color: #555;
+}
+
+.github-link:hover {
+background: #555;
+border-color: #777;
+}
+
+/* LinkedIn Link */
+.linkedin-link {
+background: #0077b5;
+border-color: #005885;
+}
+
+.linkedin-link:hover {
+background: #005885;
+border-color: #004461;
+}
 
 #portfolio-container {
 display: flex;
@@ -77,6 +160,27 @@ border: none;
 
 /* Responsive design for sections */
 @media (max-width: 768px) {
+header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .section {
     flex-direction: column;
     text-align: center;
