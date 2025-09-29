@@ -43,9 +43,17 @@ background: #fff;
 
 .section .text h2 {
 font-size: 2rem;
-margin-bottom: 1rem;
+margin-bottom: 0.5rem;
 }
 
+.section .text .subtitle {
+font-size: 1.2rem;
+font-weight: 400;
+color: #666;
+margin-bottom: 1rem;
+margin-top: 0;
+font-style: italic;
+}
 
 .section .text p {
 max-width: 500px;
@@ -111,6 +119,36 @@ height: 50px;
 width: auto;
 border-radius: 8px;
 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Google Drive Badge Styling */
+.google-drive-badge {
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 8px 16px;
+background: #4285f4;
+color: white;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 500;
+font-size: 14px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.2s, opacity 0.2s, background-color 0.2s;
+}
+
+.google-drive-badge:hover {
+transform: scale(1.05);
+background: #3367d6;
+}
+
+.drive-icon {
+width: 24px;
+height: 24px;
+}
+
+.drive-text {
+color: white;
 }
 
 /* Responsive design for platform links */
