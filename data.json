@@ -48,16 +48,6 @@
         "type": "video",
         "url": "https://www.youtube.com/embed/Yip4yHiBFKM",
         "alt": "Spaceship Defense TD Gameplay Video"
-      },
-      {
-        "type": "image",
-        "url": "https://via.placeholder.com/500x300/4CAF50/white?text=Screenshot+1",
-        "alt": "Spaceship Defense TD Screenshot 1"
-      },
-      {
-        "type": "image",
-        "url": "https://via.placeholder.com/500x300/2196F3/white?text=Screenshot+2",
-        "alt": "Spaceship Defense TD Screenshot 2"
       }
     ],
     "IOSLink": "https://apps.apple.com/us/app/spaceship-defense-td/id6752291600",
