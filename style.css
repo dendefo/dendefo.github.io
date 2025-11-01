@@ -510,6 +510,23 @@ footer {
     margin-bottom: 2rem;
 }
 
+/* Fix carousel display on mobile */
+.section .carousel {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    flex: none; /* Remove flex: 1 on mobile */
+    display: block; /* Change from flex to block */
+}
+
+.carousel-container {
+    width: 100%;
+    height: 250px;
+    min-width: 280px; /* Ensure minimum width */
+    margin: 0 auto; /* Center the container */
+}
+
 .webgl-overlay {
     top: 10px;
     right: 10px;
@@ -523,6 +540,13 @@ footer {
 
 .section .carousel {
     padding: 0 25px; /* Further reduced padding for mobile */
+    width: 100%;
+    max-width: none; /* Remove max-width constraint on mobile */
+}
+
+.carousel-container {
+    width: 100%;
+    height: 250px; /* Slightly smaller height for mobile */
 }
 
 .carousel-nav {
