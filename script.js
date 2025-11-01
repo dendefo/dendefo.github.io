@@ -112,25 +112,20 @@ try {
                     const webglId = `webgl-${Date.now()}-${index}`;
                     return `
                         <div class="carousel-slide ${activeClass} webgl-slide" data-webgl-id="${webglId}">
+                            <div class="webgl-overlay">🎮 Interactive WebGL Build</div>
                             <iframe src="${media.url}" 
-                                    width="100%" 
-                                    height="100%" 
                                     frameborder="0" 
                                     allowfullscreen
-                                    title="${media.alt}"
-                                    class="webgl-frame"
-                                    id="iframe-${webglId}">
+                                    allow="autoplay; fullscreen; microphone; camera"
+                                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                                    onload="console.log('WebGL loaded successfully')"
+                                    onerror="console.error('WebGL failed to load:', '${media.url}')"
+                                    style="width: 100%; height: 100%; border: none; border-radius: 18px;">
+                                <p>Loading WebGL build...</p>
                             </iframe>
-                            <div class="webgl-overlay">
-                                <div class="webgl-info">
-                                    <span class="webgl-icon">🎮</span>
-                                    <span class="webgl-text">Interactive WebGL Build</span>
-                                </div>
-                            </div>
-                            <div class="webgl-controls">
-                                <button class="webgl-fullscreen-btn" onclick="openWebGLFullscreen('${webglId}')" title="Open in fullscreen">
-                                    <span class="fullscreen-icon">⛶</span>
-                                    Fullscreen
+                            <div class="webgl-controls" id="webgl-controls-${carouselId}">
+                                <button onclick="openWebGLFullscreen('${media.url}')" class="webgl-fullscreen-btn">
+                                    🔍 Open in fullscreen
                                 </button>
                             </div>
                         </div>
