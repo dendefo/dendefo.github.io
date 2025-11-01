@@ -7,6 +7,11 @@
     "footer": "Idle Resource Management Game, where players can build and manage their own zoo.<br>Attracting visitors and earning money to expand their collection of animals and facilities.",
     "media": [
       {
+        "type":"webgl",
+        "url":"Idle Zoo World/Idle Zoo World WebGL Build/index.html",
+        "alt":"Idle Zoo World WebGl build"
+      },
+      {
         "type": "video",
         "url": "https://www.youtube.com/embed/optpSuFshZA",
         "alt": "Idle Zoo World Gameplay Video"
@@ -25,7 +30,7 @@
       {
         "type":"webgl",
         "url":"Hidden Match World/Hidden Match World WebGL build/index.html",
-        "alt":"WebGL build"
+        "alt":"Hidden Match World WebGL build"
       },
       {
         "type": "video",
