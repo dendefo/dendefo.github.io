@@ -23,6 +23,11 @@
     "footer": "Hidden Object Puzzle Game, where players search for hidden objects in levels. Main Match mechanic is taken from Zen Match.",
     "media": [
       {
+        "type":"webgl",
+        "url":"Hidden Match World/Hidden Match World WebGL build/index.html",
+        "alt":"WebGL build"
+      },
+      {
         "type": "video",
         "url": "https://www.youtube.com/embed/ZctSFubpwfs",
         "alt": "Hidden Match World Gameplay Video"

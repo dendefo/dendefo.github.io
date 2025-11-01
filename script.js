@@ -109,21 +109,29 @@ try {
                         </div>
                     `;
                 } else if (media.type === 'webgl') {
+                    const webglId = `webgl-${Date.now()}-${index}`;
                     return `
-                        <div class="carousel-slide ${activeClass} webgl-slide">
+                        <div class="carousel-slide ${activeClass} webgl-slide" data-webgl-id="${webglId}">
                             <iframe src="${media.url}" 
                                     width="100%" 
                                     height="100%" 
                                     frameborder="0" 
                                     allowfullscreen
                                     title="${media.alt}"
-                                    class="webgl-frame">
+                                    class="webgl-frame"
+                                    id="iframe-${webglId}">
                             </iframe>
                             <div class="webgl-overlay">
                                 <div class="webgl-info">
                                     <span class="webgl-icon">🎮</span>
                                     <span class="webgl-text">Interactive WebGL Build</span>
                                 </div>
+                            </div>
+                            <div class="webgl-controls">
+                                <button class="webgl-fullscreen-btn" onclick="openWebGLFullscreen('${webglId}')" title="Open in fullscreen">
+                                    <span class="fullscreen-icon">⛶</span>
+                                    Fullscreen
+                                </button>
                             </div>
                         </div>
                     `;
@@ -395,6 +403,32 @@ document.addEventListener('click', (e) => {
         openImageModal(e.target);
     }
 });
+
+// WebGL Controls Functions
+
+window.openWebGLFullscreen = function(webglId) {
+    const iframe = document.getElementById(`iframe-${webglId}`);
+    if (iframe) {
+        // Try different fullscreen methods for cross-browser compatibility
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) {
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+            iframe.msRequestFullscreen();
+        } else {
+            // Fallback: open in new window
+            const newWindow = window.open(iframe.src, '_blank', 'width=1280,height=720,scrollbars=no,resizable=yes');
+            if (newWindow) {
+                newWindow.focus();
+            }
+        }
+    }
+};
+
+
 
 
 document.addEventListener("DOMContentLoaded", async function() {
