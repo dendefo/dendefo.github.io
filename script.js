@@ -1,3 +1,53 @@
+// Global configuration
+let siteConfig = {};
+
+async function loadConfiguration() {
+    try {
+        const response = await fetch("config.json");
+        siteConfig = await response.json();
+        
+        // Set page title
+        document.getElementById("page-title").textContent = siteConfig.site.title;
+        
+        // Generate header
+        generateHeader();
+        
+        // Generate footer
+        generateFooter();
+        
+    } catch (error) {
+        console.error("Failed to load configuration:", error);
+    }
+}
+
+function generateHeader() {
+    const header = document.getElementById("site-header");
+    const config = siteConfig.header;
+    
+    const socialLinksHTML = config.socialLinks.map(link => 
+        `<a href="${link.url}" target="_blank" class="social-link ${link.class}">
+            <span>${link.icon} ${link.name}</span>
+        </a>`
+    ).join('');
+    
+    header.innerHTML = `
+        <h1>${config.title}</h1>
+        <div class="header-actions">
+            <a href="${config.downloadCV.file}" download="${config.downloadCV.filename}" class="cv-link">
+                <span>${config.downloadCV.text}</span>
+            </a>
+            <div class="social-links">
+                ${socialLinksHTML}
+            </div>
+        </div>
+    `;
+}
+
+function generateFooter() {
+    const footer = document.getElementById("site-footer");
+    footer.innerHTML = `<p>${siteConfig.site.footerText}</p>`;
+}
+
 async function loadPortfolio() {
 const container = document.getElementById("portfolio-container");
 
@@ -10,6 +60,7 @@ try {
         const section = document.createElement("section");
         section.className = "section";
         const subtitleHTML = item.SubTitle ? `<h3 class="subtitle">${item.SubTitle.replace(/\\n/g, '<br>')}</h3>` : '';
+        const dateHTML = item.ProjectDate ? `<div class="project-date-timeline"><span class="date-icon">📅</span>${item.ProjectDate}</div>` : '';
         
         
         
@@ -107,7 +158,10 @@ try {
         section.innerHTML = `
             <div class="section-content">
                 <div class="text">
-                    <h2>${item.Title}</h2>
+                    <div class="title-container">
+                        <h2>${item.Title}</h2>
+                        ${dateHTML}
+                    </div>
                         ${subtitleHTML}
                     <p>${item.Description}</p>
                     <div class="platform-links">
@@ -126,7 +180,8 @@ try {
         initializeCarousel(section, item.media);
     });
 } catch (error) {
-    container.innerHTML = "<p>Failed to load portfolio data.</p>";
+    const errorText = siteConfig.content?.errorText || "Failed to load portfolio data.";
+    container.innerHTML = `<p>${errorText}</p>`;
     console.error(error);
 }
 }
@@ -342,4 +397,7 @@ document.addEventListener('click', (e) => {
 });
 
 
-document.addEventListener("DOMContentLoaded", loadPortfolio);
+document.addEventListener("DOMContentLoaded", async function() {
+    await loadConfiguration();
+    await loadPortfolio();
+});

@@ -1,0 +1,40 @@
+{
+  "site": {
+    "title": "David Daniel Shapiro Portfolio",
+    "author": "David Daniel Shapiro",
+    "footerText": "© 2025 dendefo, ChatGPT5 and Claude Sonnet 4:)"
+  },
+  "header": {
+    "title": "David Daniel Shapiro Portfolio",
+    "downloadCV": {
+      "text": "📄 Download CV",
+      "filename": "David_Daniel_Shapiro_CV.pdf",
+      "file": "cv.pdf"
+    },
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "icon": "⚡",
+        "url": "https://github.com/dendefo",
+        "class": "github-link"
+      },
+      {
+        "name": "LinkedIn", 
+        "icon": "💼",
+        "url": "https://www.linkedin.com/in/dendefo/",
+        "class": "linkedin-link"
+      },
+      {
+        "name": "Telegram",
+        "icon": "💬", 
+        "url": "https://t.me/dendefo",
+        "class": "telegram-link"
+      }
+    ]
+  },
+  "content": {
+    "portfolioContainer": "portfolio-container",
+    "loadingText": "Loading portfolio...",
+    "errorText": "Failed to load portfolio data."
+  }
+}

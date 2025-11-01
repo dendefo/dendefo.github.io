@@ -149,6 +149,17 @@ color: #fff;
 box-shadow: 0 8px 25px rgba(0, 119, 181, 0.3);
 }
 
+/* Telegram Link */
+.telegram-link {
+border-color: #0088cc;
+}
+
+.telegram-link:hover {
+background: #0088cc;
+color: #fff;
+box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
+}
+
 #portfolio-container {
 display: flex;
 flex-direction: column;
@@ -444,6 +455,42 @@ white-space: nowrap;
 }
 }
 
+/* Title Container and Date Badge */
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.project-date-timeline {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-date-timeline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.date-icon {
+    font-size: 1rem;
+}
+
 /* Project Footer Styles */
 .project-footer {
 width: 100%;
@@ -525,6 +572,22 @@ footer {
     height: 250px;
     min-width: 280px; /* Ensure minimum width */
     margin: 0 auto; /* Center the container */
+}
+
+.title-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.project-date-timeline {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    gap: 6px;
+}
+
+.date-icon {
+    font-size: 0.9rem;
 }
 
 .webgl-overlay {

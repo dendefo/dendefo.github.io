@@ -1,7 +1,8 @@
 [
   {
     "Title": "Idle Zoo World",
-    "SubTitle": "Published by Supersonic from Unity<br>Dec 24 - June 25",
+    "SubTitle": "Published by Supersonic from Unity",
+    "ProjectDate": "Dec 2024 - June 2025",
     "Description": "Solo programmer on the project<br>  ⬤  Implemented core gameplay systems, UI, and integrated art assets.<br>  ⬤  Imported configuration data from Google Sheets using custom editor tools.<br>  ⬤  Implemented rewarded videos and analytics events.<br>  ⬤  Maintained and optimized codebase for performance and stability on low-end devices.<br>  ⬤  Ensured timely delivery and agile architecture for 5 iterations of the project.",
     "footer": "Idle Resource Management Game, where players can build and manage their own zoo.<br>Attracting visitors and earning money to expand their collection of animals and facilities.",
     "media": [
@@ -16,7 +17,8 @@
   },
   {
     "Title": "Hidden Match World",
-    "SubTitle": "Published by Supersonic from Unity<br>July 25",
+    "SubTitle": "Published by Supersonic from Unity",
+    "ProjectDate": "July 25",
     "Description": "Solo programmer on the project<br>  ⬤  Implemented core gameplay systems, UI, and integrating art assets.<br>  ⬤  Developed level editor tools to streamline content creation.",
     "footer": "Hidden Object Puzzle Game, where players search for hidden objects in levels. Main Match mechanic is taken from Zen Match.",
     "media": [
@@ -40,7 +42,8 @@
   },
   {
     "Title": "Spaceship Defense TD",
-    "SubTitle": "Published by Supersonic from Unity<br> Aug-Oct 25",
+    "SubTitle": "Published by Supersonic from Unity",
+    "ProjectDate": "Aug-Oct 25",
     "Description": "Solo programmer on the project<br>  ⬤  Ensured core and meta are independent and modular for easy updates and additions.<br>  ⬤  Collaborated with designers and artists to implement engaging tower defense mechanics and visually appealing assets.<br>  ⬤  Optimized performance up to 300 simultaneous enemies on screen without frame drops on low-end devices.<br>  ⬤  Created level design tools such as Timeline-based wave editor and Graph-based tower upgrade system.",
     "footer": "Tower Defense Game, where player chooses towers and upgrades for his ship and defends against waves of enemies.",
     "media": [
@@ -55,7 +58,8 @@
   },
   {
     "Title":"Miasma",
-    "SubTitle":"College Project<br>Jan-Sep 25",
+    "SubTitle":"College Project",
+    "ProjectDate": "Jan-Sep 25",
     "Description": "",
     "footer": "2.5D Sidescroller Lovecraftian Horror Game, where player is playing as a Marie - a young daughter of captain of a ship lost at sea. <br>The ship is caught in a terrible storm and Marie finds herself alone on the deck, surrounded by darkness and the howling wind. As she tries to find her way back to safety, she begins to experience strange and terrifying visions that blur the line between reality and nightmare.",
     "media": [
@@ -64,7 +68,8 @@
   },
   {
     "Title":"Chefhero",
-    "SubTitle":"Extra-Curricular Project<br>Aug-May 24",
+    "SubTitle":"Extra-Curricular Project",
+    "ProjectDate": "Aug-May 24",
     "Description": "",
     "footer": "2D Bullet Heaven Sidecroller, where player is playing as a Chef, who is trying to save his restaurant from the invasion of food monsters. Armed with a variety of kitchen utensils and cooking tools, the Chef must navigate through a series of increasingly challenging levels, battling waves of food monsters and bosses along the way. As the Chef progresses through the game, he can collect power-ups and upgrades to enhance his abilities and weapons, making him more effective against the food monsters.",
     "media": [
@@ -78,7 +83,8 @@
   },
   {
     "Title": "Horde Switch",
-    "SubTitle": "Multiplayer powered by Photon Fusion<br>May-Nov 24",
+    "SubTitle": "Multiplayer powered by Photon Fusion",
+    "ProjectDate": "May-Nov 24",
     "Description": "",
     "footer": "3D Multiplayer Card Game, where players are constantly trying to survive against enemies and outlive the opponent",
     "media": [
@@ -91,7 +97,8 @@
   },
   {
     "Title": "Dead Lift",
-    "SubTitle": "Global Game Jam Project<br> GGJ-24",
+    "SubTitle": "Global Game Jam Project",
+    "ProjectDate": "Jan 24",
     "Description": "",
     "footer": "Local Multiplayer game about getting at the highest point of a zombie tower",
     "media": [
