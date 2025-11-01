@@ -1,7 +1,6 @@
 async function loadPortfolio() {
 const container = document.getElementById("portfolio-container");
 
-
 try {
     const response = await fetch("data.json");
     const projects = await response.json();
@@ -55,7 +54,7 @@ try {
                 } else if (media.type === 'image') {
                     return `
                         <div class="carousel-slide ${activeClass}">
-                            <img src="${media.url}" alt="${media.alt}" />
+                            <img src="${media.url}" alt="${media.alt}" class="clickable-image" onclick="window.openImageModal(this);" />
                         </div>
                     `;
                 } else if (media.type === 'webgl') {
@@ -96,11 +95,11 @@ try {
                 <div class="carousel">
                     <div class="carousel-container ${hasMultipleSlides ? 'multiple-slides' : ''}" data-carousel="${carouselId}">
                         ${slidesHTML}
-                        ${navigationHTML}
                         <div class="carousel-indicators">
                             ${indicatorsHTML}
                         </div>
                     </div>
+                    ${navigationHTML}
                 </div>
             `;
         }
@@ -134,6 +133,7 @@ try {
 
 function initializeCarousel(section, mediaItems) {
     const carouselContainer = section.querySelector('.carousel-container');
+    const carouselWrapper = section.querySelector('.carousel');
     if (!carouselContainer || !mediaItems || mediaItems.length <= 1) {
         return; // No carousel needed
     }
@@ -141,8 +141,8 @@ function initializeCarousel(section, mediaItems) {
     let currentSlide = 0;
     const slides = carouselContainer.querySelectorAll('.carousel-slide');
     const indicators = carouselContainer.querySelectorAll('.carousel-indicator');
-    const prevButton = carouselContainer.querySelector('.carousel-nav.prev');
-    const nextButton = carouselContainer.querySelector('.carousel-nav.next');
+    const prevButton = carouselWrapper.querySelector('.carousel-nav.prev');
+    const nextButton = carouselWrapper.querySelector('.carousel-nav.next');
 
     function showSlide(index) {
         // Remove active class from all slides and indicators
@@ -207,7 +207,139 @@ function initializeCarousel(section, mediaItems) {
 
     // Make carousel focusable for keyboard navigation
     carouselContainer.setAttribute('tabindex', '0');
+    
+    // Images are now clickable via inline onclick handlers
 }
+
+// Global variables for modal carousel
+let modalImages = [];
+let currentModalIndex = 0;
+
+// Image Modal Functions - Make them global
+window.openImageModal = function(imgElement) {
+    // Find all images in the same project
+    const projectSection = imgElement.closest('.section');
+    const allProjectImages = projectSection.querySelectorAll('img.clickable-image');
+    
+    // Store images and find current index
+    modalImages = Array.from(allProjectImages);
+    currentModalIndex = modalImages.indexOf(imgElement);
+    
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('imageModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'imageModal';
+        modal.className = 'image-modal';
+        modal.innerHTML = `
+            <div class="modal-backdrop" onclick="window.closeImageModal()"></div>
+            <div class="modal-content">
+                <button class="modal-close" onclick="window.closeImageModal()">&times;</button>
+                <button class="modal-nav modal-prev" onclick="window.prevModalImage()" style="display: none;">‹</button>
+                <button class="modal-nav modal-next" onclick="window.nextModalImage()" style="display: none;">›</button>
+                <div class="modal-click-area modal-click-left" onclick="window.prevModalImage()" style="display: none;"></div>
+                <div class="modal-click-area modal-click-right" onclick="window.nextModalImage()" style="display: none;"></div>
+                <img id="modalImage" src="" alt="" />
+                <div class="modal-caption"></div>
+                <div class="modal-counter" style="display: none;"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    
+    // Update modal content
+    updateModalImage();
+    
+    // Show/hide navigation based on number of images
+    const hasMultipleImages = modalImages.length > 1;
+    const prevBtn = modal.querySelector('.modal-prev');
+    const nextBtn = modal.querySelector('.modal-next');
+    const clickLeft = modal.querySelector('.modal-click-left');
+    const clickRight = modal.querySelector('.modal-click-right');
+    const counter = modal.querySelector('.modal-counter');
+    
+    if (hasMultipleImages) {
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+        clickLeft.style.display = 'block';
+        clickRight.style.display = 'block';
+        counter.style.display = 'block';
+    } else {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        clickLeft.style.display = 'none';
+        clickRight.style.display = 'none';
+        counter.style.display = 'none';
+    }
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function updateModalImage() {
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.querySelector('.modal-caption');
+    const modalCounter = document.querySelector('.modal-counter');
+    
+    if (modalImages[currentModalIndex]) {
+        const currentImg = modalImages[currentModalIndex];
+        modalImage.src = currentImg.src;
+        modalImage.alt = currentImg.alt;
+        modalCaption.textContent = currentImg.alt;
+        
+        if (modalImages.length > 1) {
+            modalCounter.textContent = `${currentModalIndex + 1} / ${modalImages.length}`;
+        }
+    }
+}
+
+window.nextModalImage = function() {
+    if (modalImages.length > 0) {
+        currentModalIndex = (currentModalIndex + 1) % modalImages.length;
+        updateModalImage();
+    }
+}
+
+window.prevModalImage = function() {
+    if (modalImages.length > 0) {
+        currentModalIndex = (currentModalIndex - 1 + modalImages.length) % modalImages.length;
+        updateModalImage();
+    }
+}
+
+window.closeImageModal = function() {
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
+
+// Close modal with Escape key and navigation with arrow keys
+document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('imageModal');
+    if (modal && modal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+            closeImageModal();
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            prevModalImage();
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            nextModalImage();
+        }
+    }
+});
+
+// Global click listener for images as backup
+document.addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG' && e.target.hasAttribute('data-modal-image')) {
+        console.log('Global click listener activated for image:', e.target.src);
+        e.stopPropagation();
+        openImageModal(e.target);
+    }
+});
 
 
 document.addEventListener("DOMContentLoaded", loadPortfolio);

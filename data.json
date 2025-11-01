@@ -2,7 +2,7 @@
   {
     "Title": "Idle Zoo World",
     "SubTitle": "Published by Supersonic from Unity<br>Dec 24 - June 25",
-    "Description": "Solo programmer on the project<br>Implemented core gameplay systems, UI, and integrated art assets.<br>Imported configuration data from Google Sheets using custom editor tools.<br> Implemented rewarded videos and analytics events.<br>Maintained and optimized codebase for performance and stability on low-end devices.<br>Ensured timely delivery and agile architecture for 5 iterations of the project.",
+    "Description": "Solo programmer on the project<br>  ⬤  Implemented core gameplay systems, UI, and integrated art assets.<br>  ⬤  Imported configuration data from Google Sheets using custom editor tools.<br>  ⬤  Implemented rewarded videos and analytics events.<br>  ⬤  Maintained and optimized codebase for performance and stability on low-end devices.<br>  ⬤  Ensured timely delivery and agile architecture for 5 iterations of the project.",
     "footer": "Idle Resource Management Game, where players can build and manage their own zoo.<br>Attracting visitors and earning money to expand their collection of animals and facilities.",
     "media": [
       {
@@ -17,13 +17,23 @@
   {
     "Title": "Hidden Match World",
     "SubTitle": "Published by Supersonic from Unity<br>July 25",
-    "Description": "Solo programmer on the project<br>Implemented core gameplay systems, UI, and integrating art assets.<br>Developed level editor tools to streamline content creation.",
+    "Description": "Solo programmer on the project<br>  ⬤  Implemented core gameplay systems, UI, and integrating art assets.<br>  ⬤  Developed level editor tools to streamline content creation.",
     "footer": "Hidden Object Puzzle Game, where players search for hidden objects in levels. Main Match mechanic is taken from Zen Match.",
     "media": [
       {
         "type": "video",
         "url": "https://www.youtube.com/embed/ZctSFubpwfs",
         "alt": "Hidden Match World Gameplay Video"
+      },
+      {
+        "type":"image",
+        "url":"Hidden Match World/Level Editor.png",
+        "alt":"Hidden Match World Level Editor"
+      },
+      {
+        "type":"image",
+        "url":"Hidden Match World/Hidden Object Tab.png",
+        "alt":"Hidden Match World Hidden Object Tab"
       }
     ],
     "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.HiddenMatchWorld"  
@@ -31,7 +41,7 @@
   {
     "Title": "Spaceship Defense TD",
     "SubTitle": "Published by Supersonic from Unity<br> Aug-Oct 25",
-    "Description": "Solo programmer on the project<br>Ensured core and meta are independent and modular for easy updates and additions.<br>Collaborated with designers and artists to implement engaging tower defense mechanics and visually appealing assets.<br>Optimized performance up to 300 simultaneous enemies on screen without frame drops on low-end devices.<br>Created level design tools such as Timeline-based wave editor and Graph-based tower upgrade system.",
+    "Description": "Solo programmer on the project<br>  ⬤  Ensured core and meta are independent and modular for easy updates and additions.<br>  ⬤  Collaborated with designers and artists to implement engaging tower defense mechanics and visually appealing assets.<br>  ⬤  Optimized performance up to 300 simultaneous enemies on screen without frame drops on low-end devices.<br>  ⬤  Created level design tools such as Timeline-based wave editor and Graph-based tower upgrade system.",
     "footer": "Tower Defense Game, where player chooses towers and upgrades for his ship and defends against waves of enemies.",
     "media": [
       {
