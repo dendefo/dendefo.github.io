@@ -1,49 +1,106 @@
 [
   {
     "Title": "Idle Zoo World",
-    "SubTitle": "Published by Supersonic from Unity",
-    "Description": "Idle Resource Management Game, where players can build and manage their own zoo.\nAttracting visitors and earning money to expand their collection of animals and facilities.",
-    "VideoLink": "https://www.youtube.com/embed/optpSuFshZA",
+    "SubTitle": "Published by Supersonic from Unity<br>Dec 24 - June 25",
+    "Description": "Solo programmer on the project<br>Implemented core gameplay systems, UI, and integrated art assets.<br>Imported configuration data from Google Sheets using custom editor tools.<br> Implemented rewarded videos and analytics events.<br>Maintained and optimized codebase for performance and stability on low-end devices.<br>Ensured timely delivery and agile architecture for 5 iterations of the project.",
+    "footer": "Idle Resource Management Game, where players can build and manage their own zoo.<br>Attracting visitors and earning money to expand their collection of animals and facilities.",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/optpSuFshZA",
+        "alt": "Idle Zoo World Gameplay Video"
+      }
+    ],
     "IOSLink": "https://apps.apple.com/us/app/idle-zoo-world/id6741068719",
     "AndroidLink": "https://play.google.com/store/apps/details?id=com.QuarterGames.IdleZooWorld"
   },
   {
     "Title": "Hidden Match World",
-    "SubTitle": "Published by Supersonic from Unity",
-    "Description": "Hidden Object Puzzle Game, where players search for hidden objects in levels. Main Match mechanic is taken from Zen Match.",
-    "VideoLink": "https://www.youtube.com/embed/ZctSFubpwfs",
+    "SubTitle": "Published by Supersonic from Unity<br>July 25",
+    "Description": "Solo programmer on the project<br>Implemented core gameplay systems, UI, and integrating art assets.<br>Developed level editor tools to streamline content creation.",
+    "footer": "Hidden Object Puzzle Game, where players search for hidden objects in levels. Main Match mechanic is taken from Zen Match.",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/ZctSFubpwfs",
+        "alt": "Hidden Match World Gameplay Video"
+      }
+    ],
     "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.HiddenMatchWorld"  
   },
   {
     "Title": "Spaceship Defense TD",
-    "SubTitle": "Published by Supersonic from Unity",
-    "Description": "Tower Defense Game, where player chooses towers and upgrades for his ship and defends against waves of enemies.",
-    "VideoLink": "https://www.youtube.com/embed/Yip4yHiBFKM",
+    "SubTitle": "Published by Supersonic from Unity<br> Aug-Oct 25",
+    "Description": "Solo programmer on the project<br>Ensured core and meta are independent and modular for easy updates and additions.<br>Collaborated with designers and artists to implement engaging tower defense mechanics and visually appealing assets.<br>Optimized performance up to 300 simultaneous enemies on screen without frame drops on low-end devices.<br>Created level design tools such as Timeline-based wave editor and Graph-based tower upgrade system.",
+    "footer": "Tower Defense Game, where player chooses towers and upgrades for his ship and defends against waves of enemies.",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/Yip4yHiBFKM",
+        "alt": "Spaceship Defense TD Gameplay Video"
+      },
+      {
+        "type": "image",
+        "url": "https://via.placeholder.com/500x300/4CAF50/white?text=Screenshot+1",
+        "alt": "Spaceship Defense TD Screenshot 1"
+      },
+      {
+        "type": "image",
+        "url": "https://via.placeholder.com/500x300/2196F3/white?text=Screenshot+2",
+        "alt": "Spaceship Defense TD Screenshot 2"
+      }
+    ],
     "IOSLink": "https://apps.apple.com/us/app/spaceship-defense-td/id6752291600",
     "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.SpaceshipDefenseTD"
   },
   {
     "Title":"Miasma",
-    "Description": "2.5D Sidescroller Lovecraftian Horror Game, where player is playing as a Marie - a young daughter of captain of a ship lost at sea. \nThe ship is caught in a terrible storm and Marie finds herself alone on the deck, surrounded by darkness and the howling wind. As she tries to find her way back to safety, she begins to experience strange and terrifying visions that blur the line between reality and nightmare.",
+    "SubTitle":"College Project<br>Jan-Sep 25",
+    "Description": "",
+    "footer": "2.5D Sidescroller Lovecraftian Horror Game, where player is playing as a Marie - a young daughter of captain of a ship lost at sea. <br>The ship is caught in a terrible storm and Marie finds herself alone on the deck, surrounded by darkness and the howling wind. As she tries to find her way back to safety, she begins to experience strange and terrifying visions that blur the line between reality and nightmare.",
+    "media": [
+    ],
     "GoogleDriveLink": "https://drive.google.com/file/d/1YUn2FrCuxlFiFrY7uhd1blZ9gvxyT2ZU/view?usp=sharing"
   },
   {
     "Title":"Chefhero",
-    "Description": "2D Bullet Heaven Sidecroller, where player is playing as a Chef, who is trying to save his restaurant from the invasion of food monsters. Armed with a variety of kitchen utensils and cooking tools, the Chef must navigate through a series of increasingly challenging levels, battling waves of food monsters and bosses along the way. As the Chef progresses through the game, he can collect power-ups and upgrades to enhance his abilities and weapons, making him more effective against the food monsters.",
-    "VideoLink":  "https://drive.google.com/file/d/1ENniI6U3hq8PexpF0OPrxeuv7qhnWtpp/preview",
+    "SubTitle":"Extra-Curricular Project<br>Aug-May 24",
+    "Description": "",
+    "footer": "2D Bullet Heaven Sidecroller, where player is playing as a Chef, who is trying to save his restaurant from the invasion of food monsters. Armed with a variety of kitchen utensils and cooking tools, the Chef must navigate through a series of increasingly challenging levels, battling waves of food monsters and bosses along the way. As the Chef progresses through the game, he can collect power-ups and upgrades to enhance his abilities and weapons, making him more effective against the food monsters.",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://drive.google.com/file/d/1ENniI6U3hq8PexpF0OPrxeuv7qhnWtpp/preview",
+        "alt": "Chefhero Gameplay Video"
+      }
+    ],
     "GoogleDriveLink": "https://drive.google.com/file/d/1WtlXlExIvRExNWDfMX90B1uyzZ8hAxtR/view?usp=sharing"
   },
   {
     "Title": "Horde Switch",
-    "SubTitle": "Powered by Photon Fusion",
-    "Description": "3D Multiplayer Card Game, where players are constantly trying to survive against enemies and outlive the opponent",
-    "VideoLink": "https://drive.google.com/file/d/1oPMIMnAzv1leMpBcorQR2M8IzU90qCYs/preview"
-},
-{
-  "Title": "Dead Lift",
-  "SubTitle": "Jam Game",
-  "Description": "Local Multiplayer game about getting at the highest point of a zombie tower",
-  "VideoLink": "https://drive.google.com/file/d/1YDH8rWsn-i3rlgUI4o9Pd2R4slJkEZcC/preview",
-  "GoogleDriveLink": "https://drive.google.com/file/d/1M-Y-Sy6J92tE2i0lzxbFFhAXUsXdSsrT/view?usp=sharing"
-}
+    "SubTitle": "Multiplayer powered by Photon Fusion<br>May-Nov 24",
+    "Description": "",
+    "footer": "3D Multiplayer Card Game, where players are constantly trying to survive against enemies and outlive the opponent",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://drive.google.com/file/d/1oPMIMnAzv1leMpBcorQR2M8IzU90qCYs/preview",
+        "alt": "Horde Switch Gameplay Video"
+      }
+    ]
+  },
+  {
+    "Title": "Dead Lift",
+    "SubTitle": "Global Game Jam Project<br> GGJ-24",
+    "Description": "",
+    "footer": "Local Multiplayer game about getting at the highest point of a zombie tower",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://drive.google.com/file/d/1YDH8rWsn-i3rlgUI4o9Pd2R4slJkEZcC/preview",
+        "alt": "Dead Lift Gameplay Video"
+      }
+    ],
+    "GoogleDriveLink": "https://drive.google.com/file/d/1M-Y-Sy6J92tE2i0lzxbFFhAXUsXdSsrT/view?usp=sharing"
+  }
 ]
