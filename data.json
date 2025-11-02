@@ -26,8 +26,7 @@
       }
     ],
     "IOSLink": "https://apps.apple.com/us/app/idle-zoo-world/id6741068719",
-    "AndroidLink": "https://play.google.com/store/apps/details?id=com.QuarterGames.IdleZooWorld",
-    "GitHubLink": "https://github.com/Quarter-Games/IDLE-Resource-Management-Template"
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.QuarterGames.IdleZooWorld"
   },
   {
     "Title": "Hidden Match World",
@@ -62,8 +61,7 @@
         "alt":"Hidden Object Search Tab of level editor"
       }
     ],
-    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.HiddenMatchWorld",
-    "GitHubLink": "https://github.com/Quarter-Games/HiddenObjectTemplate"
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.HiddenMatchWorld"
   },
   {
     "Title": "Spaceship Defense TD",
@@ -86,8 +84,7 @@
       }
     ],
     "IOSLink": "https://apps.apple.com/us/app/spaceship-defense-td/id6752291600",
-    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.SpaceshipDefenseTD",
-    "GitHubLink": "https://github.com/Quarter-Games/PlaneTD"
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.SpaceshipDefenseTD"
   },
   {
     "Title":"Miasma",
@@ -138,7 +135,8 @@
     "Description": [
       "Implemented multiplayer functionality using Photon Fusion.",
       "Developed core gameplay mechanics and UI integration.",
-      "Optimized network performance for smooth gameplay experience."
+      "Optimized network performance for smooth gameplay experience.",
+      "Used Unity Cloud Build for continuous integration and delivery."
     ],
     "footer": "3D Multiplayer Card Game, where players are constantly trying to survive against enemies and outlive the opponent",
     "media": [
@@ -157,7 +155,10 @@
     "SubTitle": "Global Game Jam Project",
     "ProjectDate": "Jan 2024",
     "Description": [
-      "Lead Unity Developer in the team"
+      "Worked on physics-based character movement with a lot of joints and rigidbodies.",
+      "Implemented character art, rig and animations.",
+      "Developed Local Multiplayer",
+      "Slept 5 hours in total"
     ],
     "footer": "Local Multiplayer game about getting at the highest point of a zombie tower",
     "media": [
