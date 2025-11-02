@@ -377,6 +377,8 @@ window.closeImageModal = function() {
 // Close modal with Escape key and navigation with arrow keys
 document.addEventListener('keydown', (e) => {
     const modal = document.getElementById('imageModal');
+    const webglModal = document.getElementById('webgl-fullscreen-modal');
+    
     if (modal && modal.classList.contains('active')) {
         if (e.key === 'Escape') {
             closeImageModal();
@@ -386,6 +388,10 @@ document.addEventListener('keydown', (e) => {
         } else if (e.key === 'ArrowRight') {
             e.preventDefault();
             nextModalImage();
+        }
+    } else if (webglModal && webglModal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+            closeWebGLFullscreen();
         }
     }
 });
@@ -401,24 +407,104 @@ document.addEventListener('click', (e) => {
 
 // WebGL Controls Functions
 
-window.openWebGLFullscreen = function(webglId) {
-    const iframe = document.getElementById(`iframe-${webglId}`);
-    if (iframe) {
-        // Try different fullscreen methods for cross-browser compatibility
-        if (iframe.requestFullscreen) {
-            iframe.requestFullscreen();
-        } else if (iframe.mozRequestFullScreen) {
-            iframe.mozRequestFullScreen();
-        } else if (iframe.webkitRequestFullscreen) {
-            iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) {
-            iframe.msRequestFullscreen();
-        } else {
-            // Fallback: open in new window
-            const newWindow = window.open(iframe.src, '_blank', 'width=1280,height=720,scrollbars=no,resizable=yes');
-            if (newWindow) {
-                newWindow.focus();
-            }
+window.openWebGLFullscreen = function(webglUrl) {
+    // Create a fullscreen modal for the WebGL build
+    let fullscreenModal = document.getElementById('webgl-fullscreen-modal');
+    if (!fullscreenModal) {
+        fullscreenModal = document.createElement('div');
+        fullscreenModal.id = 'webgl-fullscreen-modal';
+        fullscreenModal.className = 'webgl-fullscreen-modal';
+        fullscreenModal.innerHTML = `
+            <div class="webgl-fullscreen-backdrop" onclick="window.closeWebGLFullscreen()"></div>
+            <div class="webgl-fullscreen-content">
+                <button class="webgl-fullscreen-close" onclick="window.closeWebGLFullscreen()">&times;</button>
+                <iframe id="webgl-fullscreen-iframe" 
+                        src="" 
+                        frameborder="0" 
+                        allowfullscreen
+                        allow="autoplay; fullscreen; microphone; camera"
+                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                        style="width: 100%; height: 100%; border: none;">
+                </iframe>
+            </div>
+        `;
+        document.body.appendChild(fullscreenModal);
+        
+        // Add CSS styles for the modal
+        if (!document.getElementById('webgl-fullscreen-styles')) {
+            const style = document.createElement('style');
+            style.id = 'webgl-fullscreen-styles';
+            style.textContent = `
+                .webgl-fullscreen-modal {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.9);
+                    z-index: 10000;
+                }
+                .webgl-fullscreen-modal.active {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .webgl-fullscreen-backdrop {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                .webgl-fullscreen-content {
+                    position: relative;
+                    width: 95%;
+                    height: 95%;
+                    max-width: 1200px;
+                    max-height: 800px;
+                }
+                .webgl-fullscreen-close {
+                    position: absolute;
+                    top: -40px;
+                    right: 0;
+                    background: rgba(255, 255, 255, 0.2);
+                    border: none;
+                    color: white;
+                    font-size: 30px;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 10001;
+                }
+                .webgl-fullscreen-close:hover {
+                    background: rgba(255, 255, 255, 0.4);
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+    
+    // Set the iframe source and show modal
+    const iframe = fullscreenModal.querySelector('#webgl-fullscreen-iframe');
+    iframe.src = webglUrl;
+    fullscreenModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeWebGLFullscreen = function() {
+    const modal = document.getElementById('webgl-fullscreen-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        // Clear iframe src to stop the game
+        const iframe = modal.querySelector('#webgl-fullscreen-iframe');
+        if (iframe) {
+            iframe.src = '';
         }
     }
 };
