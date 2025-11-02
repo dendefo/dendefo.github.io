@@ -1,9 +1,11 @@
 [
   {
     "Title": "Idle Zoo World",
+    "MyTitle": "Solo Programmer",
+    "TeamSize": 5,
     "SubTitle": "Published by Supersonic from Unity",
     "ProjectDate": "Dec 2024 - June 2025",
-    "Description": "Solo programmer on the project<br>  ⬤  Implemented core gameplay systems, UI, and integrated art assets.<br>  ⬤  Imported configuration data from Google Sheets using custom editor tools.<br>  ⬤  Implemented rewarded videos and analytics events.<br>  ⬤  Maintained and optimized codebase for performance and stability on low-end devices.<br>  ⬤  Ensured timely delivery and agile architecture for 5 iterations of the project.",
+    "Description": "  ⬤  Implemented core gameplay systems, UI, and integrated art assets.<br>  ⬤  Imported configuration data from Google Sheets using custom editor tools.<br>  ⬤  Implemented rewarded videos and analytics events.<br>  ⬤  Maintained and optimized codebase for performance and stability on low-end devices.<br>  ⬤  Ensured timely delivery and agile architecture for 5 iterations of the project.",
     "footer": "Idle Resource Management Game, where players can build and manage their own zoo.<br>Attracting visitors and earning money to expand their collection of animals and facilities.",
     "media": [
       {
@@ -22,9 +24,11 @@
   },
   {
     "Title": "Hidden Match World",
+    "MyTitle": "Solo Programmer",
+    "TeamSize": 5,
     "SubTitle": "Published by Supersonic from Unity",
-    "ProjectDate": "July 25",
-    "Description": "Solo programmer on the project<br>  ⬤  Implemented core gameplay systems, UI, and integrating art assets.<br>  ⬤  Developed level editor tools to streamline content creation.",
+    "ProjectDate": "July 2025",
+    "Description": "  ⬤  Implemented core gameplay systems, UI, and integrating art assets.<br>  ⬤  Developed level editor tools to streamline content creation.",
     "footer": "Hidden Object Puzzle Game, where players search for hidden objects in levels. Main Match mechanic is taken from Zen Match.",
     "media": [
       {
@@ -52,9 +56,11 @@
   },
   {
     "Title": "Spaceship Defense TD",
+    "MyTitle": "Solo Programmer",
+    "TeamSize": 5,
     "SubTitle": "Published by Supersonic from Unity",
-    "ProjectDate": "Aug-Oct 25",
-    "Description": "Solo programmer on the project<br>  ⬤  Ensured core and meta are independent and modular for easy updates and additions.<br>  ⬤  Collaborated with designers and artists to implement engaging tower defense mechanics and visually appealing assets.<br>  ⬤  Optimized performance up to 300 simultaneous enemies on screen without frame drops on low-end devices.<br>  ⬤  Created level design tools such as Timeline-based wave editor and Graph-based tower upgrade system.",
+    "ProjectDate": "Aug-Oct 2025",
+    "Description": "  ⬤  Ensured core and meta are independent and modular for easy updates and additions.<br>  ⬤  Collaborated with designers and artists to implement engaging tower defense mechanics and visually appealing assets.<br>  ⬤  Optimized performance up to 300 simultaneous enemies on screen without frame drops on low-end devices.<br>  ⬤  Created level design tools such as Timeline-based wave editor and Graph-based tower upgrade system.",
     "footer": "Tower Defense Game, where player chooses towers and upgrades for his ship and defends against waves of enemies.",
     "media": [
       {
@@ -68,20 +74,24 @@
   },
   {
     "Title":"Miasma",
+    "MyTitle": "Lead Unity Developer",
+    "TeamSize": 8,
     "SubTitle":"College Project",
-    "ProjectDate": "Jan-Sep 25",
-    "Description": "",
-    "footer": "2.5D Sidescroller Lovecraftian Horror Game, where player is playing as a Marie - a young daughter of captain of a ship lost at sea. <br>The ship is caught in a terrible storm and Marie finds herself alone on the deck, surrounded by darkness and the howling wind. As she tries to find her way back to safety, she begins to experience strange and terrifying visions that blur the line between reality and nightmare.",
+    "ProjectDate": "Jan-Sep 2025",
+    "Description": "  ⬤  Responsible for architecture, PRs, code reviews and mentoring other developers.<br>  ⬤  Dividing tasks among team members.<br>  ⬤  Troubleshooting of URP issues between 2D and 3D rendering.<br>  ⬤  Optimizing of GPU performance.",
+    "footer": "2.5D Sidescroller Lovecraftian Horror Game where Marie, a ship captain's daughter, navigates a storm-wracked vessel while experiencing terrifying visions that blur reality and nightmare.",
     "media": [
     ],
     "GoogleDriveLink": "https://drive.google.com/file/d/1YUn2FrCuxlFiFrY7uhd1blZ9gvxyT2ZU/view?usp=sharing"
   },
   {
     "Title":"Chefhero",
+    "MyTitle": "Solo Programmer",
+    "TeamSize": 5,
     "SubTitle":"Extra-Curricular Project",
-    "ProjectDate": "Aug-May 24",
-    "Description": "",
-    "footer": "2D Bullet Heaven Sidecroller, where player is playing as a Chef, who is trying to save his restaurant from the invasion of food monsters. Armed with a variety of kitchen utensils and cooking tools, the Chef must navigate through a series of increasingly challenging levels, battling waves of food monsters and bosses along the way. As the Chef progresses through the game, he can collect power-ups and upgrades to enhance his abilities and weapons, making him more effective against the food monsters.",
+    "ProjectDate": "Aug-May 2024",
+    "Description": "  ⬤  Developed core system including player controls, enemy AI, and level progression.<br>  ⬤  Implemented 2D art using 2D rig and IK.<br>  ⬤  Implemented meta system of upgrades into the game.",
+    "footer": "2D Bullet Heaven Sidescroller where a Chef saves his restaurant from invading food monsters using kitchen utensils and cooking tools.",
     "media": [
       {
         "type": "video",
@@ -93,9 +103,11 @@
   },
   {
     "Title": "Horde Switch",
+    "MyTitle": "Solo Programmer",
+    "TeamSize": 5,
     "SubTitle": "Multiplayer powered by Photon Fusion",
-    "ProjectDate": "May-Nov 24",
-    "Description": "",
+    "ProjectDate": "May-Nov 2024",
+    "Description": "  ⬤  Implemented multiplayer functionality using Photon Fusion.<br>  ⬤  Developed core gameplay mechanics and UI integration.<br>  ⬤  Optimized network performance for smooth gameplay experience.",
     "footer": "3D Multiplayer Card Game, where players are constantly trying to survive against enemies and outlive the opponent",
     "media": [
       {
@@ -107,9 +119,11 @@
   },
   {
     "Title": "Dead Lift",
+    "MyTitle": "Lead Unity Developer",
+    "TeamSize": 8,
     "SubTitle": "Global Game Jam Project",
-    "ProjectDate": "Jan 24",
-    "Description": "",
+    "ProjectDate": "Jan 2024",
+    "Description": "Lead Unity Developer in the team",
     "footer": "Local Multiplayer game about getting at the highest point of a zombie tower",
     "media": [
       {

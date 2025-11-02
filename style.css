@@ -228,6 +228,18 @@ font-style: italic;
 opacity: 0.9;
 }
 
+.section .text .my-title {
+font-size: 1rem;
+font-weight: 600;
+color: #667eea;
+margin-bottom: 1rem;
+margin-top: 0.5rem;
+padding: 0.3rem 0.8rem;
+background: rgba(102, 126, 234, 0.08);
+border-radius: 15px;
+display: inline-block;
+}
+
 .section .text p {
 max-width: 500px;
 margin-bottom: 1.5rem;

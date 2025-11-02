@@ -158,6 +158,8 @@ try {
             `;
         }
 
+        const myTitleHTML = item.MyTitle ? `<div class="my-title">${item.MyTitle}${item.TeamSize ? ` • Team of ${item.TeamSize}` : ''}</div>` : '';
+        
         section.innerHTML = `
             <div class="section-content">
                 <div class="text">
@@ -165,6 +167,7 @@ try {
                         <h2>${item.Title}</h2>
                         ${dateHTML}
                     </div>
+                    ${myTitleHTML}
                         ${subtitleHTML}
                     <p>${item.Description}</p>
                     <div class="platform-links">
