@@ -56,13 +56,13 @@ margin-top: 3rem;
 .cv-link {
 color: #fff;
 text-decoration: none;
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+background: linear-gradient(135deg, #ff8a3b 0%, #ff5e00 100%);
 padding: 0.75rem 1.5rem;
 border-radius: 25px;
 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 font-weight: 600;
 border: none;
-box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+box-shadow: 0 4px 15px rgba(234, 150, 102, 0.4);
 position: relative;
 overflow: hidden;
 }
@@ -84,7 +84,7 @@ left: 100%;
 
 .cv-link:hover {
 transform: translateY(-3px);
-box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+box-shadow: 0 8px 25px rgba(197, 102, 234, 1);
 }
 
 .cv-link span {
@@ -165,7 +165,7 @@ display: flex;
 flex-direction: column;
 gap: 2rem;
 padding: 2rem;
-max-width: 1200px;
+max-width: 1600px;
 margin: 0 auto;
 min-height: calc(100vh - 200px);
 box-sizing: border-box;
@@ -200,7 +200,7 @@ padding: 3rem 2rem 1rem 2rem;
 
 .section .text {
   flex: 1;
-  max-width: 600px;
+  max-width: 800px;
   text-align: left;
   padding-right: 2rem;
   padding-left: 2rem;
@@ -241,7 +241,7 @@ display: inline-block;
 }
 
 .section .text p {
-max-width: 500px;
+max-width: 700px;
 margin-bottom: 1.5rem;
 font-size: 1.1rem;
 line-height: 1.7;
@@ -249,26 +249,49 @@ color: #555;
 }
 
 
+/* Carousel Section (contains platform links + carousel) */
+.section .carousel-section {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+max-width: 700px;
+margin: 0 auto;
+}
+
+.section .carousel-section .platform-links {
+margin-bottom: 1.5rem;
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+justify-content: center;
+}
+
+/* Carousel Wrapper */
+.section .carousel-wrapper {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 95%;
+}
+
 /* Carousel Styles */
 .section .carousel {
-flex: 1;
 display: flex;
 justify-content: center;
 position: relative;
-max-width: 500px;
-margin: 0 auto;
-padding: 0 30px; /* Reduced padding since arrows are closer */
+width: 100%;
+padding: 0 30px; /* Increased padding to accommodate navigation arrows */
 }
 
 .carousel-container {
 position: relative;
 width: 100%;
-height: 300px;
+aspect-ratio: 16 / 9;
 overflow: hidden;
 border-radius: 20px;
 background: #000;
 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .carousel-slide {
@@ -333,10 +356,6 @@ justify-content: center;
 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 z-index: 15;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-opacity: 0;
-}
-
-.carousel:hover .carousel-nav {
 opacity: 1;
 }
 
@@ -347,11 +366,11 @@ box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-nav.prev {
-left: -20px;
+left: -15px;
 }
 
 .carousel-nav.next {
-right: -20px;
+right: -15px;
 }
 
 /* Carousel Indicators */
@@ -393,6 +412,23 @@ background: rgba(255, 255, 255, 1);
 border-color: rgba(255, 255, 255, 0.5);
 transform: scale(1.3);
 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel Alt Text */
+.carousel-alt-text {
+text-align: center;
+padding: 0.75rem 1rem;
+margin-top: 1rem;
+font-size: 0.9rem;
+color: #666;
+font-style: italic;
+background: rgba(255, 255, 255, 0.05);
+border-radius: 8px;
+border: 1px solid rgba(255, 255, 255, 0.1);
+line-height: 1.4;
+min-height: 1.4em;
+width: 100%;
+box-sizing: border-box;
 }
 
 /* Hide navigation and indicators when there's only one slide */
@@ -512,6 +548,73 @@ white-space: nowrap;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 255, 150, 0.4);
     background: linear-gradient(135deg, #00ff96 0%, #00b8e6 100%);
+}
+
+/* Full Carousel WebGL Button */
+.webgl-fullscreen-carousel-btn {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.webgl-fullscreen-carousel-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.webgl-fullscreen-carousel-btn:hover::before {
+    opacity: 1;
+}
+
+.webgl-fullscreen-carousel-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.webgl-play-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.webgl-play-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+}
+
+.webgl-play-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.webgl-game-title {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 .fullscreen-icon {
@@ -752,9 +855,13 @@ footer {
 .platform-links {
 display: flex;
 gap: 1.5rem;
-margin-top: 2rem;
 flex-wrap: wrap;
 align-items: center;
+}
+
+/* Platform links when in text section (legacy) */
+.section .text .platform-links {
+margin-top: 2rem;
 }
 
 .platform-badge {

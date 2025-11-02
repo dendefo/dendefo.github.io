@@ -112,22 +112,13 @@ try {
                     const webglId = `webgl-${Date.now()}-${index}`;
                     return `
                         <div class="carousel-slide ${activeClass} webgl-slide" data-webgl-id="${webglId}">
-                            <div class="webgl-overlay">🎮 Interactive WebGL Build</div>
-                            <iframe src="${media.url}" 
-                                    frameborder="0" 
-                                    allowfullscreen
-                                    allow="autoplay; fullscreen; microphone; camera"
-                                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-                                    onload="console.log('WebGL loaded successfully')"
-                                    onerror="console.error('WebGL failed to load:', '${media.url}')"
-                                    style="width: 100%; height: 100%; border: none; border-radius: 18px;">
-                                <p>Loading WebGL build...</p>
-                            </iframe>
-                            <div class="webgl-controls" id="webgl-controls-${carouselId}">
-                                <button onclick="openWebGLFullscreen('${media.url}')" class="webgl-fullscreen-btn">
-                                    🔍 Open in fullscreen
-                                </button>
-                            </div>
+                            <button onclick="openWebGLFullscreen('${media.url}')" class="webgl-fullscreen-carousel-btn">
+                                <div class="webgl-play-content">
+                                    <div class="webgl-play-icon">🎮</div>
+                                    <div class="webgl-play-text">Play in browser</div>
+                                    <div class="webgl-game-title">${media.alt}</div>
+                                </div>
+                            </button>
                         </div>
                     `;
                 }
@@ -146,14 +137,17 @@ try {
             ` : '';
 
             carouselHTML = `
-                <div class="carousel">
-                    <div class="carousel-container ${hasMultipleSlides ? 'multiple-slides' : ''}" data-carousel="${carouselId}">
-                        ${slidesHTML}
-                        <div class="carousel-indicators">
-                            ${indicatorsHTML}
+                <div class="carousel-wrapper">
+                    <div class="carousel">
+                        <div class="carousel-container ${hasMultipleSlides ? 'multiple-slides' : ''}" data-carousel="${carouselId}">
+                            ${slidesHTML}
+                            <div class="carousel-indicators">
+                                ${indicatorsHTML}
+                            </div>
                         </div>
+                        ${navigationHTML}
                     </div>
-                    ${navigationHTML}
+                    ${item.media && item.media.length > 0 ? `<div class="carousel-alt-text" data-carousel-alt="${carouselId}">${item.media[0].alt}</div>` : ''}
                 </div>
             `;
         }
@@ -170,11 +164,13 @@ try {
                     ${myTitleHTML}
                         ${subtitleHTML}
                     <p>${item.Description}</p>
+                </div>
+                <div class="carousel-section">
                     <div class="platform-links">
                         ${platformLinks}
                     </div>
+                    ${carouselHTML}
                 </div>
-                ${carouselHTML}
             </div>
             <div class="project-footer">
                 <div class="description">${(item.footer || item.Description).replace(/\\n/g, '<br>')}</div>
@@ -204,6 +200,7 @@ function initializeCarousel(section, mediaItems) {
     const indicators = carouselContainer.querySelectorAll('.carousel-indicator');
     const prevButton = carouselWrapper.querySelector('.carousel-nav.prev');
     const nextButton = carouselWrapper.querySelector('.carousel-nav.next');
+    const altTextElement = section.querySelector('.carousel-alt-text');
 
     function showSlide(index) {
         // Remove active class from all slides and indicators
@@ -216,6 +213,11 @@ function initializeCarousel(section, mediaItems) {
         }
         if (indicators[index]) {
             indicators[index].classList.add('active');
+        }
+
+        // Update alt text
+        if (altTextElement && mediaItems[index]) {
+            altTextElement.textContent = mediaItems[index].alt;
         }
 
         currentSlide = index;
@@ -231,40 +233,79 @@ function initializeCarousel(section, mediaItems) {
         showSlide(prev);
     }
 
-    // Event listeners
+    // Event listeners are now handled below with pause functionality
+
+    // Auto-advance carousel every 5 seconds
+    let autoAdvanceInterval = setInterval(nextSlide, 5000);
+    let isPaused = false;
+    let pauseTimeout;
+
+    function pauseCarousel() {
+        if (!isPaused) {
+            clearInterval(autoAdvanceInterval);
+            isPaused = true;
+        }
+        // Clear any existing resume timeout
+        clearTimeout(pauseTimeout);
+    }
+
+    function resumeCarousel() {
+        // Set a timeout to resume after user interaction stops
+        clearTimeout(pauseTimeout);
+        pauseTimeout = setTimeout(() => {
+            if (isPaused) {
+                autoAdvanceInterval = setInterval(nextSlide, 5000);
+                isPaused = false;
+            }
+        }, 2000); // Resume 2 seconds after last interaction
+    }
+
+    // Pause on hover
+    carouselContainer.addEventListener('mouseenter', pauseCarousel);
+    carouselContainer.addEventListener('mouseleave', resumeCarousel);
+
+    // Pause on button clicks
     if (nextButton) {
-        nextButton.addEventListener('click', nextSlide);
+        nextButton.addEventListener('click', () => {
+            pauseCarousel();
+            nextSlide();
+            resumeCarousel();
+        });
     }
 
     if (prevButton) {
-        prevButton.addEventListener('click', prevSlide);
+        prevButton.addEventListener('click', () => {
+            pauseCarousel();
+            prevSlide();
+            resumeCarousel();
+        });
     }
 
-    // Indicator click events
+    // Pause on indicator clicks
     indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => showSlide(index));
+        indicator.addEventListener('click', () => {
+            pauseCarousel();
+            showSlide(index);
+            resumeCarousel();
+        });
     });
 
-    // Auto-advance carousel every 5 seconds (optional)
-    let autoAdvanceInterval = setInterval(nextSlide, 5000);
-
-    // Pause auto-advance on hover
-    carouselContainer.addEventListener('mouseenter', () => {
-        clearInterval(autoAdvanceInterval);
-    });
-
-    carouselContainer.addEventListener('mouseleave', () => {
-        autoAdvanceInterval = setInterval(nextSlide, 5000);
-    });
-
-    // Keyboard navigation
+    // Pause on keyboard navigation
     carouselContainer.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
+            pauseCarousel();
             prevSlide();
+            resumeCarousel();
         } else if (e.key === 'ArrowRight') {
+            pauseCarousel();
             nextSlide();
+            resumeCarousel();
         }
     });
+
+    // Pause when carousel gains focus
+    carouselContainer.addEventListener('focus', pauseCarousel);
+    carouselContainer.addEventListener('blur', resumeCarousel);
 
     // Make carousel focusable for keyboard navigation
     carouselContainer.setAttribute('tabindex', '0');
@@ -462,27 +503,26 @@ window.openWebGLFullscreen = function(webglUrl) {
                 }
                 .webgl-fullscreen-content {
                     position: relative;
-                    width: 95%;
-                    height: 95%;
-                    max-width: 1200px;
-                    max-height: 800px;
+                    width: 100%;
+                    height: 100%;
                 }
                 .webgl-fullscreen-close {
-                    position: absolute;
-                    top: -40px;
-                    right: 0;
-                    background: rgba(255, 255, 255, 0.2);
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: rgba(0, 0, 0, 0.7);
                     border: none;
                     color: white;
                     font-size: 30px;
-                    width: 40px;
-                    height: 40px;
+                    width: 50px;
+                    height: 50px;
                     border-radius: 50%;
                     cursor: pointer;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     z-index: 10001;
+                    backdrop-filter: blur(10px);
                 }
                 .webgl-fullscreen-close:hover {
                     background: rgba(255, 255, 255, 0.4);

@@ -11,7 +11,7 @@
       {
         "type":"webgl",
         "url":"https://dendefo.github.io/Idle Zoo World/IDLE Zoo World WebGL Build/index.html",
-        "alt":"Idle Zoo World WebGL build"
+        "alt":"WebGL interactive build"
       },
       {
         "type": "video",
@@ -34,22 +34,22 @@
       {
         "type":"webgl",
         "url":"Hidden Match World/Hidden Match World WebGL build/index.html",
-        "alt":"Hidden Match World WebGL build"
+        "alt":"WebGL interactive build"
       },
       {
         "type": "video",
         "url": "https://www.youtube.com/embed/ZctSFubpwfs",
-        "alt": "Hidden Match World Gameplay Video"
+        "alt": "Gameplay Video"
       },
       {
         "type":"image",
         "url":"Hidden Match World/Level Editor.png",
-        "alt":"Hidden Match World Level Editor"
+        "alt":"Level Editor"
       },
       {
         "type":"image",
         "url":"Hidden Match World/Hidden Object Tab.png",
-        "alt":"Hidden Match World Hidden Object Tab"
+        "alt":"Hidden Object Search Tab of level editor"
       }
     ],
     "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.HiddenMatchWorld"  
@@ -66,7 +66,7 @@
       {
         "type": "video",
         "url": "https://www.youtube.com/embed/Yip4yHiBFKM",
-        "alt": "Spaceship Defense TD Gameplay Video"
+        "alt": "Gameplay Video"
       }
     ],
     "IOSLink": "https://apps.apple.com/us/app/spaceship-defense-td/id6752291600",
@@ -96,7 +96,7 @@
       {
         "type": "video",
         "url": "https://drive.google.com/file/d/1ENniI6U3hq8PexpF0OPrxeuv7qhnWtpp/preview",
-        "alt": "Chefhero Gameplay Video"
+        "alt": "Trailer Video"
       }
     ],
     "GoogleDriveLink": "https://drive.google.com/file/d/1WtlXlExIvRExNWDfMX90B1uyzZ8hAxtR/view?usp=sharing"
@@ -113,7 +113,7 @@
       {
         "type": "video",
         "url": "https://drive.google.com/file/d/1oPMIMnAzv1leMpBcorQR2M8IzU90qCYs/preview",
-        "alt": "Horde Switch Gameplay Video"
+        "alt": "Gameplay Video with two players"
       }
     ]
   },
@@ -129,7 +129,7 @@
       {
         "type": "video",
         "url": "https://drive.google.com/file/d/1YDH8rWsn-i3rlgUI4o9Pd2R4slJkEZcC/preview",
-        "alt": "Dead Lift Gameplay Video"
+        "alt": "Trailer"
       }
     ],
     "GoogleDriveLink": "https://drive.google.com/file/d/1M-Y-Sy6J92tE2i0lzxbFFhAXUsXdSsrT/view?usp=sharing"
