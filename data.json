@@ -76,7 +76,11 @@
       "Created level design tools such as Timeline-based wave editor and Graph-based tower upgrade system."
     ],
     "footer": "Tower Defense Game, where player chooses towers and upgrades for his ship and defends against waves of enemies.",
-    "media": [
+    "media": [{
+        "type":"webgl",
+        "url":"Spaceship Defense TD/PlaneTD WebGL/index.html",
+        "alt":"WebGL interactive build"
+    },
       {
         "type": "video",
         "url": "https://www.youtube.com/embed/Yip4yHiBFKM",

@@ -493,81 +493,70 @@ window.openWebGLFullscreen = function(webglUrl) {
                         allowfullscreen
                         allow="autoplay; fullscreen; microphone; camera"
                         sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-                        style="width: 100%; height: 100%; border: none;">
+                        scrolling="no"
+                        style="width: 100%; height: 100%; border: none; overflow: hidden; display: block;">
                 </iframe>
             </div>
         `;
         document.body.appendChild(fullscreenModal);
-        
-        // Add CSS styles for the modal
-        if (!document.getElementById('webgl-fullscreen-styles')) {
-            const style = document.createElement('style');
-            style.id = 'webgl-fullscreen-styles';
-            style.textContent = `
-                .webgl-fullscreen-modal {
-                    display: none;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.9);
-                    z-index: 10000;
-                }
-                .webgl-fullscreen-modal.active {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                .webgl-fullscreen-backdrop {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                }
-                .webgl-fullscreen-content {
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                }
-                .webgl-fullscreen-close {
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background: rgba(0, 0, 0, 0.7);
-                    border: none;
-                    color: white;
-                    font-size: 30px;
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 10001;
-                    backdrop-filter: blur(10px);
-                }
-                .webgl-fullscreen-close:hover {
-                    background: rgba(255, 255, 255, 0.4);
-                }
-            `;
-            document.head.appendChild(style);
-        }
     }
     
     // Set the iframe source and show modal
     const iframe = fullscreenModal.querySelector('#webgl-fullscreen-iframe');
     iframe.src = webglUrl;
-    fullscreenModal.classList.add('active');
+    
+    // Add load event to inject containment styles into the iframe
+    iframe.onload = function() {
+        try {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            const style = iframeDoc.createElement('style');
+            style.textContent = `
+                html, body {
+                    margin: 0 !important; 
+                    padding: 0 !important; 
+                    overflow: hidden !important;
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+                #unity-container, #gameContainer {
+                    width: 100% !important;
+                    height: 100% !important;
+                    position: relative !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                }
+                canvas {
+                    max-width: 100% !important;
+                    max-height: 100% !important;
+                    width: auto !important;
+                    height: auto !important;
+                    display: block !important;
+                    position: relative !important;
+                }
+                #unity-webgl-logo, #unity-progress-bar-container, #unity-footer, 
+                #unity-loading-bar, #unity-logo, .unity-mobile {
+                    display: none !important;
+                    visibility: hidden !important;
+                }
+            `;
+            iframeDoc.head.appendChild(style);
+        } catch (e) {
+            // Cross-origin restrictions may prevent this, but that's okay
+            console.log('Could not inject styles into iframe (cross-origin)');
+        }
+    };
+    
+    fullscreenModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 };
 
 window.closeWebGLFullscreen = function() {
     const modal = document.getElementById('webgl-fullscreen-modal');
     if (modal) {
-        modal.classList.remove('active');
+        modal.style.display = 'none';
         document.body.style.overflow = '';
         // Clear iframe src to stop the game
         const iframe = modal.querySelector('#webgl-fullscreen-iframe');
