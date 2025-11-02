@@ -5,7 +5,13 @@
     "TeamSize": 5,
     "SubTitle": "Published by Supersonic from Unity",
     "ProjectDate": "Dec 2024 - June 2025",
-    "Description": "  ⬤  Implemented core gameplay systems, UI, and integrated art assets.<br>  ⬤  Imported configuration data from Google Sheets using custom editor tools.<br>  ⬤  Implemented rewarded videos and analytics events.<br>  ⬤  Maintained and optimized codebase for performance and stability on low-end devices.<br>  ⬤  Ensured timely delivery and agile architecture for 5 iterations of the project.",
+    "Description": [
+      "Implemented core gameplay systems, UI, and integrated art assets.",
+      "Imported configuration data from Google Sheets using custom editor tools.",
+      "Implemented rewarded videos and analytics events.",
+      "Maintained and optimized codebase for performance and stability on low-end devices.",
+      "Ensured timely delivery and agile architecture for 5 iterations of the project."
+    ],
     "footer": "Idle Resource Management Game, where players can build and manage their own zoo.<br>Attracting visitors and earning money to expand their collection of animals and facilities.",
     "media": [
       {
@@ -20,7 +26,8 @@
       }
     ],
     "IOSLink": "https://apps.apple.com/us/app/idle-zoo-world/id6741068719",
-    "AndroidLink": "https://play.google.com/store/apps/details?id=com.QuarterGames.IdleZooWorld"
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.QuarterGames.IdleZooWorld",
+    "GitHubLink": "https://github.com/Quarter-Games/IDLE-Resource-Management-Template"
   },
   {
     "Title": "Hidden Match World",
@@ -28,7 +35,10 @@
     "TeamSize": 5,
     "SubTitle": "Published by Supersonic from Unity",
     "ProjectDate": "July 2025",
-    "Description": "  ⬤  Implemented core gameplay systems, UI, and integrating art assets.<br>  ⬤  Developed level editor tools to streamline content creation.",
+    "Description": [
+      "Implemented core gameplay systems, UI, and integrating art assets.",
+      "Developed level editor tools to streamline content creation."
+    ],
     "footer": "Hidden Object Puzzle Game, where players search for hidden objects in levels. Main Match mechanic is taken from Zen Match.",
     "media": [
       {
@@ -52,7 +62,8 @@
         "alt":"Hidden Object Search Tab of level editor"
       }
     ],
-    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.HiddenMatchWorld"  
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.HiddenMatchWorld",
+    "GitHubLink": "https://github.com/Quarter-Games/HiddenObjectTemplate"
   },
   {
     "Title": "Spaceship Defense TD",
@@ -60,7 +71,12 @@
     "TeamSize": 5,
     "SubTitle": "Published by Supersonic from Unity",
     "ProjectDate": "Aug-Oct 2025",
-    "Description": "  ⬤  Ensured core and meta are independent and modular for easy updates and additions.<br>  ⬤  Collaborated with designers and artists to implement engaging tower defense mechanics and visually appealing assets.<br>  ⬤  Optimized performance up to 300 simultaneous enemies on screen without frame drops on low-end devices.<br>  ⬤  Created level design tools such as Timeline-based wave editor and Graph-based tower upgrade system.",
+    "Description": [
+      "Ensured core and meta are independent and modular for easy updates and additions.",
+      "Collaborated with designers and artists to implement engaging tower defense mechanics and visually appealing assets.",
+      "Optimized performance up to 300 simultaneous enemies on screen without frame drops on low-end devices.",
+      "Created level design tools such as Timeline-based wave editor and Graph-based tower upgrade system."
+    ],
     "footer": "Tower Defense Game, where player chooses towers and upgrades for his ship and defends against waves of enemies.",
     "media": [
       {
@@ -70,7 +86,8 @@
       }
     ],
     "IOSLink": "https://apps.apple.com/us/app/spaceship-defense-td/id6752291600",
-    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.SpaceshipDefenseTD"
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.SpaceshipDefenseTD",
+    "GitHubLink": "https://github.com/Quarter-Games/PlaneTD"
   },
   {
     "Title":"Miasma",
@@ -78,11 +95,17 @@
     "TeamSize": 8,
     "SubTitle":"College Project",
     "ProjectDate": "Jan-Sep 2025",
-    "Description": "  ⬤  Responsible for architecture, PRs, code reviews and mentoring other developers.<br>  ⬤  Dividing tasks among team members.<br>  ⬤  Troubleshooting of URP issues between 2D and 3D rendering.<br>  ⬤  Optimizing of GPU performance.",
+    "Description": [
+      "Responsible for architecture, PRs, code reviews and mentoring other developers.",
+      "Dividing tasks among team members.",
+      "Troubleshooting of URP issues between 2D and 3D rendering.",
+      "Optimizing of GPU performance."
+    ],
     "footer": "2.5D Sidescroller Lovecraftian Horror Game where Marie, a ship captain's daughter, navigates a storm-wracked vessel while experiencing terrifying visions that blur reality and nightmare.",
     "media": [
     ],
-    "GoogleDriveLink": "https://drive.google.com/file/d/1YUn2FrCuxlFiFrY7uhd1blZ9gvxyT2ZU/view?usp=sharing"
+    "GoogleDriveLink": "https://drive.google.com/file/d/1YUn2FrCuxlFiFrY7uhd1blZ9gvxyT2ZU/view?usp=sharing",
+    "GitHubLink": "https://github.com/Quarter-Games/Death-Beyond-Depths"
   },
   {
     "Title":"Chefhero",
@@ -90,7 +113,11 @@
     "TeamSize": 5,
     "SubTitle":"Extra-Curricular Project",
     "ProjectDate": "Aug-May 2024",
-    "Description": "  ⬤  Developed core system including player controls, enemy AI, and level progression.<br>  ⬤  Implemented 2D art using 2D rig and IK.<br>  ⬤  Implemented meta system of upgrades into the game.",
+    "Description": [
+      "Developed core system including player controls, enemy AI, and level progression.",
+      "Implemented 2D art using 2D rig and IK.",
+      "Implemented meta system of upgrades into the game."
+    ],
     "footer": "2D Bullet Heaven Sidescroller where a Chef saves his restaurant from invading food monsters using kitchen utensils and cooking tools.",
     "media": [
       {
@@ -99,7 +126,8 @@
         "alt": "Trailer Video"
       }
     ],
-    "GoogleDriveLink": "https://drive.google.com/file/d/1WtlXlExIvRExNWDfMX90B1uyzZ8hAxtR/view?usp=sharing"
+    "GoogleDriveLink": "https://drive.google.com/file/d/1WtlXlExIvRExNWDfMX90B1uyzZ8hAxtR/view?usp=sharing",
+    "GitHubLink": "https://github.com/Quarter-Games/Natuw"
   },
   {
     "Title": "Horde Switch",
@@ -107,7 +135,11 @@
     "TeamSize": 5,
     "SubTitle": "Multiplayer powered by Photon Fusion",
     "ProjectDate": "May-Nov 2024",
-    "Description": "  ⬤  Implemented multiplayer functionality using Photon Fusion.<br>  ⬤  Developed core gameplay mechanics and UI integration.<br>  ⬤  Optimized network performance for smooth gameplay experience.",
+    "Description": [
+      "Implemented multiplayer functionality using Photon Fusion.",
+      "Developed core gameplay mechanics and UI integration.",
+      "Optimized network performance for smooth gameplay experience."
+    ],
     "footer": "3D Multiplayer Card Game, where players are constantly trying to survive against enemies and outlive the opponent",
     "media": [
       {
@@ -115,7 +147,8 @@
         "url": "https://drive.google.com/file/d/1oPMIMnAzv1leMpBcorQR2M8IzU90qCYs/preview",
         "alt": "Gameplay Video with two players"
       }
-    ]
+    ],
+    "GitHubLink":"https://github.com/Quarter-Games/Horde-Switch"
   },
   {
     "Title": "Dead Lift",
@@ -123,7 +156,9 @@
     "TeamSize": 8,
     "SubTitle": "Global Game Jam Project",
     "ProjectDate": "Jan 2024",
-    "Description": "Lead Unity Developer in the team",
+    "Description": [
+      "Lead Unity Developer in the team"
+    ],
     "footer": "Local Multiplayer game about getting at the highest point of a zombie tower",
     "media": [
       {
@@ -132,6 +167,7 @@
         "alt": "Trailer"
       }
     ],
-    "GoogleDriveLink": "https://drive.google.com/file/d/1M-Y-Sy6J92tE2i0lzxbFFhAXUsXdSsrT/view?usp=sharing"
+    "GoogleDriveLink": "https://drive.google.com/file/d/1M-Y-Sy6J92tE2i0lzxbFFhAXUsXdSsrT/view?usp=sharing",
+    "GitHubLink": "https://github.com/dendefo/Dead-Lift"
   }
 ]

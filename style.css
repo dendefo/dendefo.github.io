@@ -193,18 +193,17 @@ box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 .section-content {
 display: flex;
 justify-content: space-between;
-align-items: center;
+align-items: stretch;
 padding: 3rem 2rem 1rem 2rem;
+gap: 0;
 }
 
 
 .section .text {
-  flex: 1;
-  max-width: 800px;
   text-align: left;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding: 0;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .section .text h2 {
@@ -248,15 +247,41 @@ line-height: 1.7;
 color: #555;
 }
 
+.section .text .description-list {
+max-width: 700px;
+margin-bottom: 1.5rem;
+padding-left: 0;
+list-style: none;
+}
+
+.section .text .description-list li {
+font-size: 1.1rem;
+line-height: 1.7;
+color: #555;
+margin-bottom: 0.5rem;
+position: relative;
+padding-left: 1.5rem;
+}
+
+.section .text .description-list li::before {
+content: '●';
+color: #666;
+font-size: 1rem;
+position: absolute;
+left: 0;
+top: 0;
+}
+
 
 /* Carousel Section (contains platform links + carousel) */
 .section .carousel-section {
-flex: 1;
+flex: 0 0 50%;
 display: flex;
 flex-direction: column;
 align-items: center;
-max-width: 700px;
-margin: 0 auto;
+width: 50%;
+box-sizing: border-box;
+padding-left: 1rem;
 }
 
 .section .carousel-section .platform-links {
@@ -375,19 +400,14 @@ right: -15px;
 
 /* Carousel Indicators */
 .carousel-indicators {
-position: absolute;
-bottom: 20px;
-left: 50%;
-transform: translateX(-50%);
+position: static;
 display: flex;
-gap: 10px;
-z-index: 5;
-opacity: 0;
-transition: opacity 0.3s ease;
-}
-
-.carousel-container:hover .carousel-indicators {
+justify-content: center;
+gap: 12px;
+margin-top: 2rem;
+z-index: 10;
 opacity: 1;
+transition: all 0.3s ease;
 }
 
 .carousel-indicator {
@@ -398,7 +418,7 @@ background: rgba(255, 255, 255, 0.4);
 cursor: pointer;
 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 border: 2px solid rgba(255, 255, 255, 0.2);
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-indicator:hover {
@@ -408,10 +428,10 @@ z-index: 15;
 }
 
 .carousel-indicator.active {
-background: rgba(255, 255, 255, 1);
+background: rgb(141, 6, 153);
 border-color: rgba(255, 255, 255, 0.5);
 transform: scale(1.3);
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Carousel Alt Text */
@@ -431,9 +451,8 @@ width: 100%;
 box-sizing: border-box;
 }
 
-/* Hide navigation and indicators when there's only one slide */
-.carousel-container:not(.multiple-slides) .carousel-nav,
-.carousel-container:not(.multiple-slides) .carousel-indicators {
+/* Hide navigation when there's only one slide */
+.carousel-container:not(.multiple-slides) .carousel-nav {
 display: none;
 }
 
@@ -659,7 +678,47 @@ white-space: nowrap;
     font-size: 1rem;
 }
 
-/* Project Footer Styles */
+/* Text Section Styles */
+.text-section {
+    position: relative;
+    flex: 0 0 50%;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+    border-bottom: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.text-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-footer .description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-line;
+    text-align: justify;
+    font-weight: 400;
+}
+
+.text-footer .description strong {
+    color: #444;
+    font-weight: 600;
+}
+
+/* Carousel Section Styling - Visual Separation */
+.carousel-section {
+    position: relative;
+    padding-top: 1.5rem;
+}
+
+/* Legacy Project Footer Styles - for backward compatibility */
 .project-footer {
 width: 100%;
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
@@ -719,10 +778,25 @@ footer {
     padding: 2rem 1rem 1rem 1rem;
 }
 
+.text-section {
+    flex: none;
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 2rem;
+}
+
+.carousel-section {
+    flex: none;
+    width: 100%;
+    padding-left: 0;
+}
+
 .section-content .text {
     padding-right: 1rem;
     padding-left: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 /* Fix carousel display on mobile */
@@ -840,6 +914,25 @@ footer {
     height: 10px;
 }
 
+.text-section {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.text-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.text-footer .description {
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.carousel-section {
+    padding-top: 1rem;
+}
+
 .project-footer {
     padding: 1.5rem;
     margin: 0;
@@ -891,7 +984,7 @@ display: flex;
 align-items: center;
 gap: 10px;
 padding: 12px 20px;
-background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+background: linear-gradient(135deg, #42caf4 0%, #34a861 100%);
 color: white;
 border-radius: 15px;
 text-decoration: none;
@@ -930,6 +1023,80 @@ height: 24px;
 
 .drive-text {
 color: white;
+}
+
+/* GitHub Badge Styles */
+.github-badge {
+background: linear-gradient(135deg, #24292e 0%, #1a1e22 100%);
+color: white;
+display: flex;
+align-items: center;
+padding: 0.5rem 1rem;
+gap: 0.5rem;
+position: relative;
+overflow: hidden;
+}
+
+.github-badge:before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+transition: left 0.5s ease;
+}
+
+.github-badge:hover:before {
+left: 100%;
+}
+
+.github-badge:hover {
+background: linear-gradient(135deg, #2c3e50 0%, #24292e 100%);
+transform: translateY(-2px);
+}
+
+.github-page-badge {
+background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+color: white;
+display: flex;
+align-items: center;
+padding: 0.5rem 1rem;
+gap: 0.5rem;
+position: relative;
+overflow: hidden;
+}
+
+.github-page-badge:before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+transition: left 0.5s ease;
+}
+
+.github-page-badge:hover:before {
+left: 100%;
+}
+
+.github-page-badge:hover {
+background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+transform: translateY(-2px);
+}
+
+.github-icon {
+width: 24px;
+height: 24px;
+fill: currentColor;
+}
+
+.github-text {
+color: white;
+font-weight: 500;
 }
 
 /* Responsive design for platform links */
