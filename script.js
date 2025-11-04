@@ -130,9 +130,17 @@ try {
                     `;
                 } else if (media.type === 'webgl') {
                     const webglId = `webgl-${Date.now()}-${index}`;
+                    const backgroundElement = media.background ? 
+                        `<div class="webgl-bg-blur" style="background-image: url('${media.background}'); background-size: cover; background-position: center; filter: blur(2px);"></div>` :
+                        '';
+                    const buttonStyle = media.background ? 
+                        'background: transparent;' :
+                        'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);';
+                    
                     return `
                         <div class="carousel-slide ${activeClass} webgl-slide" data-webgl-id="${webglId}">
-                            <button onclick="openWebGLFullscreen('${media.url}')" class="webgl-fullscreen-carousel-btn">
+                            <button onclick="openWebGLFullscreen('${media.url}')" class="webgl-fullscreen-carousel-btn" style="${buttonStyle}">
+                                ${backgroundElement}
                                 <div class="webgl-play-content">
                                     <div class="webgl-play-icon">🎮</div>
                                     <div class="webgl-play-text">Play in browser</div>

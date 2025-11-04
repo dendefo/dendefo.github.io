@@ -17,7 +17,8 @@
       {
         "type":"webgl",
         "url":"https://dendefo.github.io/Idle Zoo World/IDLE Zoo World WebGL Build/index.html",
-        "alt":"WebGL interactive build"
+        "alt":"WebGL interactive build",
+        "background": "Idle Zoo World/Ft Image.png"
       },
       {
         "type": "video",
@@ -43,7 +44,8 @@
       {
         "type":"webgl",
         "url":"Hidden Match World/Hidden Match World WebGL build/index.html",
-        "alt":"WebGL interactive build"
+        "alt":"WebGL interactive build",
+        "background": "Hidden Match World/Graphic_Image_1024x500.png"
       },
       {
         "type": "video",
@@ -79,7 +81,8 @@
     "media": [{
         "type":"webgl",
         "url":"Spaceship Defense TD/PlaneTD WebGL/index.html",
-        "alt":"WebGL interactive build"
+        "alt":"WebGL interactive build",
+        "background": "Spaceship Defense TD/Spaceship TD banner.png"
     },
       {
         "type": "video",
@@ -104,6 +107,11 @@
     ],
     "footer": "2.5D Sidescroller Lovecraftian Horror Game where Marie, a ship captain's daughter, navigates a storm-wracked vessel while experiencing terrifying visions that blur reality and nightmare.",
     "media": [
+      {
+        "type": "video",
+        "url": "https://drive.google.com/file/d/1ytKmnGGGiaAwVk0j4BhRW3tjQ0K5KbuL/preview",
+        "alt": "Trailer Video"
+      }
     ],
     "GoogleDriveLink": "https://drive.google.com/file/d/1YUn2FrCuxlFiFrY7uhd1blZ9gvxyT2ZU/view?usp=sharing",
     "GitHubLink": "https://github.com/Quarter-Games/Death-Beyond-Depths"
