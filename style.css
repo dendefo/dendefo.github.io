@@ -489,6 +489,7 @@ margin-top: 2rem;
 z-index: 10;
 opacity: 1;
 transition: all 0.3s ease;
+min-height: 14px;
 }
 
 .carousel-indicator {
@@ -860,7 +861,7 @@ font-weight: 700;
 header {
     position: static;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0rem;
     text-align: center;
     padding: 1rem;
 }
@@ -922,7 +923,7 @@ footer {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: 0 20px;
+    padding: 0 0px;
     flex: none; /* Remove flex: 1 on mobile */
     display: block; /* Change from flex to block */
 }

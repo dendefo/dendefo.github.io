@@ -186,7 +186,7 @@ try {
                         </div>
                         ${navigationHTML}
                     </div>
-                    ${hasMultipleSlides ? `<div class="carousel-indicators">${indicatorsHTML}</div>` : ''}
+                    <div class="carousel-indicators" style="${!hasMultipleSlides ? 'visibility: hidden;' : ''}">${indicatorsHTML}</div>
                     ${item.media && item.media.length > 0 ? `<div class="carousel-alt-text" data-carousel-alt="${carouselId}">${item.media[0].alt}</div>` : ''}
                 </div>
             `;
