@@ -161,7 +161,7 @@ box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
 }
 
 #portfolio-main {
-max-width: 1800px;
+max-width: 98%;
 margin: 0 auto;
 min-height: calc(100vh - 200px);
 box-sizing: border-box;
@@ -288,16 +288,36 @@ font-style: italic;
 opacity: 0.9;
 }
 
-.section .my-title {
-font-size: 1rem;
-font-weight: 600;
-color: #667eea;
-margin-bottom: 1rem;
-margin-top: 0.5rem;
-padding: 0.3rem 0.8rem;
-background: rgba(102, 126, 234, 0.08);
-border-radius: 15px;
-display: inline-block;
+.project-role-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 20px 0 20px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-role-badge:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.role-icon {
+    font-size: 1rem;
 }
 
 .section .text p {
@@ -720,7 +740,8 @@ white-space: nowrap;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
-    margin-bottom: 0.5rem;
+    margin-top: 3rem;
+    margin-bottom: 0rem;
 }
 
 .project-date-timeline {
@@ -917,6 +938,7 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .project-date-timeline {
@@ -925,6 +947,14 @@ footer {
     gap: 6px;
       top: 0;
       right: 0;
+}
+
+.project-role-badge {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    gap: 6px;
+    top: 0;
+    left: 0;
 }
 
 .webgl-controls {

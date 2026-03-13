@@ -192,17 +192,17 @@ try {
             `;
         }
 
-        const myTitleHTML = item.MyTitle ? `<div class="my-title">${item.MyTitle}${item.TeamSize ? ` • Team of ${item.TeamSize}` : ''}</div>` : '';
+        const roleHTML = item.MyTitle ? `<div class="project-role-badge"><span class="role-icon">👤</span>${item.MyTitle}${item.TeamSize ? ` • Team of ${item.TeamSize}` : ''}</div>` : '';
         
         section.innerHTML = `
             <div class="section-content">
                 <div class="text-section">
                     <div class="title-container">
-                        <h2>${item.Title}</h2>
+                        ${roleHTML}
                         ${dateHTML}
+                        <h2>${item.Title}</h2>
                     </div>
                     ${subtitleHTML}
-                    ${myTitleHTML}
                     
                     <div class="carousel-section" style="width: 100%; padding: 0.5rem 0;">
                         ${carouselHTML}
