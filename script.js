@@ -120,6 +120,9 @@ try {
         if (item.Publisher === 'Supersonic from Unity' || (item.SubTitle && item.SubTitle.includes('Supersonic'))) {
             category = 'Supersonic from Unity';
         }
+        else if (item.Publisher ==="Crazy Labs"){
+            category = 'Crazy Labs';
+        }
         section.setAttribute('data-category', category);
 
         // Create carousel HTML if media exists

@@ -75,6 +75,71 @@
     "Publisher": "Supersonic from Unity"
   },
   {
+    "Title": "Myth Showdown",
+    "MyTitle": "Gameplay Programmer",
+    "TeamSize": 8,
+    "ProjectDate": "Oct 2025 - Nov 2025",
+    "Publisher": "Crazy Labs",
+    "Description":[
+      "Implement core gameplay autobattle systems, UI, and integrating art assets.",
+      "Collaborated with designers and artists to implement engaging mechanics and visually appealing assets.",
+      "Animated characters and effects using Unity's animation system and DOTween for smooth and responsive gameplay.",
+      "Developer Card-Rolling dependency system to manage character progression and unlocks."
+    ],
+    "footer": "Auto-Battler Game, where players collect and upgrade characters based on mythological creatures and battle against other players in strategic matches.",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/8hAc_rFF5-A",
+        "alt": "Gameplay Video"
+      }
+    ],
+    "IOSLink": "https://apps.apple.com/us/app/myth-showdown/id6752291599",
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.cloverhoppa.dsd&hl=en"
+  },
+  {
+    "Title":"Hex Flow",
+    "MyTitle": "Solo Programmer",
+    "TeamSize": 6,
+    "ProjectDate": "Dec 2025 - Jan 2026",
+    "Publisher": "Crazy Labs",
+    "Description": [
+      "Implemented core gameplay systems, UI, and integrating art assets.",
+      "Developed quick prototype for marketability testing with changing requirements and tight deadlines."
+    ],
+    "media":[
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/J_6ZYLMejX0",
+        "alt": "Gameplay Video"
+      }
+    ],
+    "footer": "Pixel Flow like Puzzle game, where player sends colored rabbits to the tray and tries to clear the hexagonal level",
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.hoppa.hexaflow"
+  },
+  {
+    "Title": "Coffee Go!",
+    "MyTitle": "Tools Programmer",
+    "TeamSize": 9,
+    "ProjectDate": "Jan 2026 - Feb 2026",
+    "Publisher": "Crazy Labs",
+    "Description":[
+      "Created customer level editing tools workflow inside Unity Prefab Stage by using Handles as a designer control points",
+      "Developed A* pathfinding solver algorithm based on state-space graph of the level and implemented it in C# to validate level solvability",
+      "Designed a solution for robust anyisize multicolored trays for cups, allowing development for new mechains",
+      "Collaborated with Lead developer to ensure seamless integration of tools into the development pipeline and provided ongoing support for tool usage and maintenance."
+    ],
+    "footer": "Puzzle Game, where player clicks on colored cups inside trays trying to clear the level by sending them to the correct colored trays",
+    "media":[
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/3dW1rGvoVKA",
+        "alt": "Gameplay Video"
+      }
+    ],
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.hoppa.coffeego"
+  },
+  {
     "Title": "Hidden Match World",
     "MyTitle": "Solo Programmer",
     "TeamSize": 5,
