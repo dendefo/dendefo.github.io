@@ -30,6 +30,51 @@
     "AndroidLink": "https://play.google.com/store/apps/details?id=com.QuarterGames.IdleZooWorld"
   },
   {
+    "Title": "Glass Jam",
+    "MyTitle": "Solo Programmer",
+    "TeamSize": 5,
+    "SubTitle": "Published by Supersonic from Unity",
+    "ProjectDate": "Nov 2025 - Dec 2025",
+    "Description": [
+      "Implemented core gameplay systems, UI, and integrating art assets.",
+      "Developed automation level editor tools to quickly import from PSB to playable levels.",
+      "Leveraged AI-assistant to create dynamic difficulty in level generation",
+      "Integrated Unity Analytics to track player behavior and optimize game design based on data insights."
+    ],
+    "footer": "Merge-3 Puzzle Game, where players pick up and merge glass pieces to clear levels and progress through the game.",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/NezhyxUt-8Q",
+        "alt": "Gameplay Video"
+      }
+    ],
+    "IOSLink": "https://apps.apple.com/us/app/glass-jam/id6756352103",
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.GlassJam"
+  },
+  {
+    "Title":"Recycle Jam",
+    "MyTitle": "Solo Programmer",
+    "TeamSize": 5,
+    "SubTitle":"Published by Supersonic from Unity",
+    "ProjectDate": "Nov 2025 - Dec 2025",
+    "Description": [
+      "Implemented core gameplay systems, UI, and integrating art assets.",
+      "Integrated core systems from previous games to streamline development.",
+      "Created smooth fluid-like animations for flowing bottles using DOTween and Feel.",
+      "Leveraged AI-assistant to create dynamic difficulty in level generation"
+    ],
+    "footer": "Merge-3 Puzzle Game, where players pick up and merge bottles in the ocean to clear levels and progress through the game.",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/P2Ta0kF8fuY",
+        "alt": "Gameplay Video"
+      }
+    ],
+    "AndroidLink": "https://play.google.com/store/apps/details?id=com.CloverBite.RecycleJam"
+  },
+  {
     "Title": "Hidden Match World",
     "MyTitle": "Solo Programmer",
     "TeamSize": 5,
