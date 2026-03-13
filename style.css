@@ -160,15 +160,66 @@ color: #fff;
 box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
 }
 
-#portfolio-container {
-display: flex;
-flex-direction: column;
-gap: 2rem;
-padding: 2rem;
-max-width: 1600px;
+#portfolio-main {
+max-width: 1800px;
 margin: 0 auto;
 min-height: calc(100vh - 200px);
 box-sizing: border-box;
+padding-top: 2rem;
+}
+
+#filter-container {
+display: flex;
+justify-content: center;
+gap: 1rem;
+margin-bottom: 1rem;
+flex-wrap: wrap;
+padding: 0 1rem;
+}
+
+.filter-btn {
+background: rgba(255, 255, 255, 0.2);
+border: 2px solid rgba(255, 255, 255, 0.4);
+color: #fff;
+padding: 0.5rem 1.5rem;
+border-radius: 20px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s ease;
+backdrop-filter: blur(10px);
+font-size: 1rem;
+}
+
+.filter-btn:hover {
+background: rgba(255, 255, 255, 0.4);
+transform: translateY(-2px);
+}
+
+.filter-btn.active {
+background: #fff;
+color: #333;
+border-color: #fff;
+box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+#portfolio-container {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.5rem;
+padding: 1rem;
+box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+    #portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #portfolio-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 .section {
@@ -183,6 +234,7 @@ overflow: hidden;
 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 min-height: fit-content;
 position: relative;
+height: 100%;
 }
 
 .section:hover {
@@ -192,12 +244,21 @@ box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 
 .section-content {
 display: flex;
-justify-content: space-between;
+flex-direction: column;
+justify-content: flex-start;
 align-items: stretch;
-padding: 3rem 2rem 1rem 2rem;
-gap: 0;
+padding: 2rem;
+gap: 1.5rem;
+flex: 1;
 }
 
+
+.section-header {
+  text-align: left;
+  padding: 0 160px 0 0;
+  box-sizing: border-box;
+  width: 100%;
+}
 
 .section .text {
   text-align: left;
@@ -206,7 +267,7 @@ gap: 0;
   width: 100%;
 }
 
-.section .text h2 {
+.section h2 {
 font-size: 2.5rem;
 margin-bottom: 0.5rem;
 font-weight: 700;
@@ -217,7 +278,7 @@ background-clip: text;
 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.section .text .subtitle {
+.section .subtitle {
 font-size: 1.3rem;
 font-weight: 500;
 color: #667eea;
@@ -227,7 +288,7 @@ font-style: italic;
 opacity: 0.9;
 }
 
-.section .text .my-title {
+.section .my-title {
 font-size: 1rem;
 font-weight: 600;
 color: #667eea;
@@ -264,7 +325,7 @@ padding-left: 1.5rem;
 }
 
 .section .text .description-list li::before {
-content: '●';
+content: '\25cf';
 color: #666;
 font-size: 1rem;
 position: absolute;
@@ -275,13 +336,13 @@ top: 0;
 
 /* Carousel Section (contains platform links + carousel) */
 .section .carousel-section {
-flex: 0 0 50%;
+flex: none;
 display: flex;
 flex-direction: column;
 align-items: center;
-width: 50%;
+width: 100%;
 box-sizing: border-box;
-padding-left: 1rem;
+padding-left: 0;
 }
 
 .section .carousel-section .platform-links {
@@ -297,7 +358,7 @@ justify-content: center;
 display: flex;
 flex-direction: column;
 align-items: center;
-width: 95%;
+width: 100%;
 }
 
 /* Carousel Styles */
@@ -306,7 +367,7 @@ display: flex;
 justify-content: center;
 position: relative;
 width: 100%;
-padding: 0 30px; /* Increased padding to accommodate navigation arrows */
+padding: 0;
 }
 
 .carousel-container {
@@ -391,11 +452,11 @@ box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-nav.prev {
-left: -15px;
+left: 10px;
 }
 
 .carousel-nav.next {
-right: -15px;
+right: 10px;
 }
 
 /* Carousel Indicators */
@@ -656,19 +717,24 @@ white-space: nowrap;
 /* Title Container and Date Badge */
 .title-container {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
     margin-bottom: 0.5rem;
-    flex-wrap: wrap;
 }
 
 .project-date-timeline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
     color: #333;
     padding: 8px 16px;
-    border-radius: 25px;
+    border-radius: 0 20px 0 20px;
     font-size: 0.9rem;
     font-weight: 500;
     display: flex;
@@ -692,14 +758,16 @@ white-space: nowrap;
 /* Text Section Styles */
 .text-section {
     position: relative;
-    flex: 0 0 50%;
-    width: 50%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     box-sizing: border-box;
-    padding-right: 1rem;
-    padding-bottom: 2rem;
+    padding-right: 0;
+    padding-bottom: 0;
     margin-bottom: 0;
     border-bottom: none;
-    border-right: 2px solid rgba(255, 255, 255, 0.15);
+    border-right: none;
 }
 
 .text-footer {
@@ -723,10 +791,19 @@ white-space: nowrap;
     font-weight: 600;
 }
 
+.platform-links-container {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
 /* Carousel Section Styling - Visual Separation */
 .carousel-section {
     position: relative;
-    padding-top: 1.5rem;
+    padding-top: 0;
 }
 
 /* Legacy Project Footer Styles - for backward compatibility */
@@ -807,7 +884,13 @@ footer {
     padding-left: 0;
 }
 
-.section-content .text {
+.section-content .section-header {
+      padding-right: 120px;
+      padding-left: 1rem;
+      margin-bottom: 0;
+  }
+  
+  .section-content .text {
     padding-right: 1rem;
     padding-left: 1rem;
     margin-bottom: 0;
@@ -840,10 +923,8 @@ footer {
     font-size: 0.85rem;
     padding: 6px 14px;
     gap: 6px;
-}
-
-.date-icon {
-    font-size: 0.9rem;
+      top: 0;
+      right: 0;
 }
 
 .webgl-controls {
@@ -890,11 +971,11 @@ footer {
 }
 
 .carousel-nav.prev {
-    left: -15px;
+    left: 5px;
 }
 
 .carousel-nav.next {
-    right: -15px;
+    right: 5px;
 }
 
 .section .carousel {
@@ -964,6 +1045,7 @@ display: flex;
 gap: 1.5rem;
 flex-wrap: wrap;
 align-items: center;
+justify-content: center;
 }
 
 /* Platform links when in text section (legacy) */
@@ -1117,7 +1199,7 @@ font-weight: 500;
 @media (max-width: 768px) {
 .platform-links {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .platform-link {

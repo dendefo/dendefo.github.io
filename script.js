@@ -59,7 +59,15 @@ try {
     projects.forEach(item => {
         const section = document.createElement("section");
         section.className = "section";
-        const subtitleHTML = item.SubTitle ? `<h3 class="subtitle">${item.SubTitle.replace(/\\n/g, '<br>')}</h3>` : '';
+        
+        let subtitleText = '';
+        if (item.Publisher) {
+            subtitleText = `Published by ${item.Publisher}`;
+        } else if (item.SubTitle) {
+            subtitleText = item.SubTitle;
+        }
+        const subtitleHTML = subtitleText ? `<h3 class="subtitle">${subtitleText.replace(/\\n/g, '<br>')}</h3>` : '';
+        
         const dateHTML = item.ProjectDate ? `<div class="project-date-timeline"><span class="date-icon">📅</span>${item.ProjectDate}</div>` : '';
         
         
@@ -108,6 +116,12 @@ try {
                 </a>
             `;
         }
+        let category = 'Other';
+        if (item.Publisher === 'Supersonic from Unity' || (item.SubTitle && item.SubTitle.includes('Supersonic'))) {
+            category = 'Supersonic from Unity';
+        }
+        section.setAttribute('data-category', category);
+
         // Create carousel HTML if media exists
         let carouselHTML = '';
         if (item.media && item.media.length > 0) {
@@ -119,7 +133,7 @@ try {
                 if (media.type === 'video') {
                     return `
                         <div class="carousel-slide ${activeClass}">
-                            <iframe src="${media.url}" allowfullscreen title="${media.alt}"></iframe>
+                            <iframe src="${media.url}" allowfullscreen title="${media.alt}" style="border: none; width: 100%; height: 100%;"></iframe>
                         </div>
                     `;
                 } else if (media.type === 'image') {
@@ -165,7 +179,7 @@ try {
             ` : '';
 
             carouselHTML = `
-                <div class="carousel-wrapper">
+                <div class="carousel-wrapper" style="margin: 1rem 0;">
                     <div class="carousel">
                         <div class="carousel-container ${hasMultipleSlides ? 'multiple-slides' : ''}" data-carousel="${carouselId}">
                             ${slidesHTML}
@@ -183,13 +197,18 @@ try {
         section.innerHTML = `
             <div class="section-content">
                 <div class="text-section">
-                    <div class="text">
-                        <div class="title-container">
-                            <h2>${item.Title}</h2>
-                            ${dateHTML}
-                        </div>
-                        ${subtitleHTML}
-                        ${myTitleHTML}
+                    <div class="title-container">
+                        <h2>${item.Title}</h2>
+                        ${dateHTML}
+                    </div>
+                    ${subtitleHTML}
+                    ${myTitleHTML}
+                    
+                    <div class="carousel-section" style="width: 100%; padding: 0.5rem 0;">
+                        ${carouselHTML}
+                    </div>
+
+                    <div class="text" style="width: 100%; padding: 0;">
                         <ul class="description-list">
                             ${Array.isArray(item.Description) ? 
                                 item.Description.map(point => `<li>${point}</li>`).join('') :
@@ -197,15 +216,16 @@ try {
                             }
                         </ul>
                     </div>
-                    <div class="text-footer">
-                        <div class="description">${(item.footer || item.Description).replace(/\\n/g, '<br>')}</div>
+                    
+                    <div class="text-footer" style="padding: 0; margin-top: 1rem;">
+                        <div class="description">${(item.footer || (Array.isArray(item.Description) ? item.Description.join(' ') : item.Description)).replace(/\\n/g, '<br>')}</div>
                     </div>
-                </div>
-                <div class="carousel-section">
-                    <div class="platform-links">
-                        ${platformLinks}
+
+                    <div class="platform-links-container" style="margin-top: 1.5rem; justify-content: center; width: 100%;">
+                        <div class="platform-links" style="width: 100%; justify-content: center; flex-wrap: wrap;">
+                            ${platformLinks}
+                        </div>
                     </div>
-                    ${carouselHTML}
                 </div>
             </div>
         `;
@@ -214,11 +234,39 @@ try {
         // Initialize carousel functionality for this section
         initializeCarousel(section, item.media);
     });
+
+    // Initialize portfolio filters
+    setupFilters();
 } catch (error) {
     const errorText = siteConfig.content?.errorText || "Failed to load portfolio data.";
     container.innerHTML = `<p>${errorText}</p>`;
     console.error(error);
 }
+}
+
+function setupFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const sections = document.querySelectorAll('.section');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state of buttons
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            sections.forEach(section => {
+                const category = section.getAttribute('data-category');
+                if (filterValue === 'All' || category === filterValue) {
+                    section.parentElement.style.display = ''; // Restore default display
+                    section.style.display = 'flex'; // Assuming section is a flex container
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    });
 }
 
 function initializeCarousel(section, mediaItems) {
