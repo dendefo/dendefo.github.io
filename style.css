@@ -198,22 +198,183 @@ transform: translateY(-2px);
 .filter-btn.active {
 background: #fff;
 color: #333;
-border-color: #fff;
-box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Split Layout Styles */
+.split-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#project-sidebar {
+  width: 45%;
+  flex-shrink: 0;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 100px;
+}
+
+/* Sidebar Scrollbar */
+#project-sidebar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+#project-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+#project-main-pane {
+  flex-grow: 1;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Horizontal Main Pane Layout */
+.split-project-layout {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.split-project-layout .media-column {
+  flex: 1;
+  min-width: 0; 
+  /* min-width: 0 prevents flex items from overflowing their containers if media is large */
+  width: 50%;
+}
+
+.split-project-layout .text-column {
+  flex: 1;
+  min-width: 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.split-project-layout .carousel-section {
+  width: 100%;
+}
+
+.split-project-layout .platform-links-container {
+  margin-top: 1.5rem;
+}
+
+.split-project-layout .platform-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/* Mobile Responsiveness for Horizontal Layout */
+@media (max-width: 1024px) {
+  .split-project-layout {
+    flex-direction: column !important;
+  }
+  .split-project-layout .media-column,
+  .split-project-layout .text-column {
+    width: 100%;
+  }
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.project-card.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.project-thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.project-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-title {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.project-card-role {
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .split-layout {
+    flex-direction: column;
+  }
+  #project-sidebar {
+    width: 100%;
+    max-height: none;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5rem;
+    position: static;
+  }
+  .project-card {
+    min-width: 200px;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+  }
+  #project-main-pane {
+    width: 100%;
+    padding: 1rem;
+  }
 }
 
 #portfolio-container {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
+display: flex;
 gap: 1.5rem;
 padding: 1rem;
 box-sizing: border-box;
 }
 
 @media (max-width: 1200px) {
-    #portfolio-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* Mobile styles handled elsewhere */
 }
 
 @media (max-width: 768px) {
@@ -244,7 +405,7 @@ box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 
 .section-content {
 display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: flex-start;
 align-items: stretch;
 padding: 2rem;
