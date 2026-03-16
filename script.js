@@ -90,14 +90,21 @@ try {
         }
         card.setAttribute('data-category', category);
 
+        let subtitleText = '';
+        if (item.Publisher) {
+            subtitleText = item.Publisher;
+        } else if (item.SubTitle) {
+            subtitleText = item.SubTitle;
+        }
+
         card.innerHTML = `
             ${thumbnailHTML}
             <div class="project-card-info">
                 <span class="project-card-title">${item.Title}</span>
-                <span class="project-card-role">${item.MyTitle || 'Developer'}</span>
+                <span class="project-card-role">${subtitleText || item.MyTitle || 'Developer'}</span>
             </div>
         `;
-        
+
         card.addEventListener("click", () => {
             document.querySelectorAll(".project-card").forEach(c => c.classList.remove("active"));
             card.classList.add("active");
@@ -365,6 +372,10 @@ function initializeCarousel(section, mediaItems) {
     }
 
     function nextSlide() {
+        // Prevent auto-advancing if a video or iframe has focus
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            return;
+        }
         const next = (currentSlide + 1) % slides.length;
         showSlide(next);
     }
@@ -401,9 +412,9 @@ function initializeCarousel(section, mediaItems) {
         }, 2000); // Resume 2 seconds after last interaction
     }
 
-    // Pause on hover
-    carouselContainer.addEventListener('mouseenter', pauseCarousel);
-    carouselContainer.addEventListener('mouseleave', resumeCarousel);
+    // Pause on hover over the entire tile
+    section.addEventListener('mouseenter', pauseCarousel);
+    section.addEventListener('mouseleave', resumeCarousel);
 
     // Pause on button clicks
     if (nextButton) {

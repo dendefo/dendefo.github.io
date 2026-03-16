@@ -253,7 +253,7 @@
     "Title": "Horde Switch",
     "MyTitle": "Solo Programmer",
     "TeamSize": 5,
-    "SubTitle": "Multiplayer powered by Photon Fusion",
+    "SubTitle": "Multiplayer Photon Fusion",
     "ProjectDate": "May-Nov 2024",
     "Description": [
       "Implemented multiplayer functionality using Photon Fusion.",
@@ -265,8 +265,8 @@
     "media": [
       {
         "type": "video",
-        "url": "https://drive.google.com/file/d/1oPMIMnAzv1leMpBcorQR2M8IzU90qCYs/preview",
-        "alt": "Gameplay Video with two players"
+        "url": "https://drive.google.com/file/d/1HjCPvucMTy7-c_zDjGWcl0kI7wx345qk/preview",
+        "alt": "Showcase of multiplayer functionality and gameplay mechanics"
       }
     ],
     "GitHubLink": "https://github.com/Quarter-Games/Horde-Switch"
